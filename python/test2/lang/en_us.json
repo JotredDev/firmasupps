@@ -1,0 +1,22 @@
+{
+  "config.jade.plugin_firmasupps.candle_holder": "Candle Holder",
+  "config.jade.plugin_firmasupps.sconce": "Sconce",
+  "firmasupps.creative_tab.firmasupps": "Firmasupplementaries",
+  "block.firmasupps.candle_holder": "Candle Holder",
+  "block.firmasupps.candle_holder.white": "White Candle Holder",
+  "block.firmasupps.candle_holder.light_gray": "Light Gray Candle Holder",
+  "block.firmasupps.candle_holder.gray": "Gray Candle Holder",
+  "block.firmasupps.candle_holder.black": "Black Candle Holder",
+  "block.firmasupps.candle_holder.brown": "Brown Candle Holder",
+  "block.firmasupps.candle_holder.red": "Red Candle Holder",
+  "block.firmasupps.candle_holder.orange": "Orange Candle Holder",
+  "block.firmasupps.candle_holder.yellow": "Yellow Candle Holder",
+  "block.firmasupps.candle_holder.lime": "Lime Candle Holder",
+  "block.firmasupps.candle_holder.green": "Green Candle Holder",
+  "block.firmasupps.candle_holder.cyan": "Cyan Candle Holder",
+  "block.firmasupps.candle_holder.light_blue": "Light Blue Candle Holder",
+  "block.firmasupps.candle_holder.blue": "Blue Candle Holder",
+  "block.firmasupps.candle_holder.purple": "Purple Candle Holder",
+  "block.firmasupps.candle_holder.magenta": "Magenta Candle Holder",
+  "block.firmasupps.candle_holder.pink": "Pink Candle Holder"
+}

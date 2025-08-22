@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "wrench"
+    }
+  ],
+  "ingredient": {
+    "item": "supplementaries:wrench"
+  },
+  "heat_capacity": 4.286,
+  "forging_temperature": 648,
+  "welding_temperature": 864
+}

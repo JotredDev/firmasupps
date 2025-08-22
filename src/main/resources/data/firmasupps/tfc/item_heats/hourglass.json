@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "hourglass"
+    }
+  ],
+  "ingredient": {
+    "item": "supplementaries:hourglass"
+  },
+  "heat_capacity": 6.667,
+  "forging_temperature": 636,
+  "welding_temperature": 848
+}

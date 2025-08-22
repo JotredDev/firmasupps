@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "candle_holder"
+    }
+  ],
+  "ingredient": {
+    "tag": "firmasupps:candle_holders"
+  },
+  "heat_capacity": 1.429,
+  "forging_temperature": 924,
+  "welding_temperature": 1232
+}

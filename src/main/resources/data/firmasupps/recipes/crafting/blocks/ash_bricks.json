@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "ash_bricks"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "101",
+    "010",
+    "101"
+  ],
+  "key": {
+    "0": {
+      "tag": "tfc:mortar"
+    },
+    "1": {
+      "item": "supplementaries:ash_brick"
+    }
+  },
+  "result": {
+    "item": "supplementaries:ash_bricks",
+    "count": 4
+  }
+}

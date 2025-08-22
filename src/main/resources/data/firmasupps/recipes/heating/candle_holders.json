@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "candle_holder"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "firmasupps:candle_holders"
+  },
+  "result_fluid": {
+    "fluid": "tfc:metal/steel",
+    "amount": 50
+  },
+  "temperature": 1540
+}

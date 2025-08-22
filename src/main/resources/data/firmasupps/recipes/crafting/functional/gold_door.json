@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "gold_door"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "01",
+    "01"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:metal/sheet/gold"
+    },
+    "1": {
+      "item": "tfc:brass_mechanisms"
+    }
+  },
+  "result": {
+    "item": "supplementaries:gold_door",
+    "count": 3
+  }
+}

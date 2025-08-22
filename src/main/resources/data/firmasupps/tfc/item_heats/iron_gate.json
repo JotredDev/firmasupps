@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "iron_gate"
+    }
+  ],
+  "ingredient": {
+    "item": "supplementaries:iron_gate"
+  },
+  "heat_capacity": 1.429,
+  "forging_temperature": 921,
+  "welding_temperature": 1228
+}

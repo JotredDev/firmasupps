@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "cannon"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "020",
+    "333"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:metal/sheet/steel"
+    },
+    "1": {
+      "item": "tfc:brass_mechanisms"
+    },
+    "2": {
+      "item": "minecraft:dispenser"
+    },
+    "3": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "supplementaries:cannon"
+  }
+}

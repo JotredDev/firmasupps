@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "turn_table"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "232",
+    "242"
+  ],
+  "key": {
+    "0": {
+      "tag": "minecraft:planks"
+    },
+    "1": {
+      "item": "tfc:metal/sheet/copper"
+    },
+    "2": {
+      "tag": "forge:cobblestone"
+    },
+    "3": {
+      "item": "tfc:brass_mechanisms"
+    },
+    "4": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "supplementaries:turn_table",
+    "count": 2
+  }
+}

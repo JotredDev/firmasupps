@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "goblet"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:bowl"
+    },
+    "1": {
+      "item": "tfc:metal/rod/wrought_iron"
+    }
+  },
+  "result": {
+    "item": "firmasupps:goblet"
+  }
+}

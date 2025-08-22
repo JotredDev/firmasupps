@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "crank"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 0 ",
+    "111"
+  ],
+  "key": {
+    "0": {
+      "tag": "forge:rods/wooden"
+    },
+    "1": {
+      "tag": "tfc:rock/raw"
+    }
+  },
+  "result": {
+    "item": "supplementaries:crank"
+  }
+}

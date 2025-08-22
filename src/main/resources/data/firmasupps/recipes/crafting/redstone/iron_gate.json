@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "iron_gate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "010"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:metal/bars/wrought_iron"
+    },
+    "1": {
+      "item": "tfc:brass_mechanisms"
+    }
+  },
+  "result": {
+    "item": "supplementaries:iron_gate",
+    "count": 2
+  }
+}

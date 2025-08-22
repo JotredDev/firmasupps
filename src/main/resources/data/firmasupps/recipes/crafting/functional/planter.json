@@ -1,0 +1,29 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "planter"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "020",
+    "000"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:brick"
+    },
+    "1": {
+      "item": "tfc:compost"
+    },
+    "2": {
+      "tag": "tfc:dirt"
+    }
+  },
+  "result": {
+    "item": "firmasupps:planter",
+    "count": 1
+  }
+}

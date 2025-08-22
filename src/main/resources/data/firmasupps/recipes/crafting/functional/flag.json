@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "flag"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "flag",
+  "pattern": [
+    "011"
+  ],
+  "key": {
+    "0": {
+      "tag": "forge:rods/wooden"
+    },
+    "1": {
+      "tag": "tfc:high_quality_cloth"
+    }
+  },
+  "result": {
+    "item": "supplementaries:flag_white"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "slingshot"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "232",
+    " 2 "
+  ],
+  "key": {
+    "0": {
+      "tag": "forge:string"
+    },
+    "1": {
+      "item": "tfc:small_raw_hide"
+    },
+    "2": {
+      "tag": "forge:rods/wooden"
+    },
+    "3": {
+      "item": "tfc:glue"
+    }
+  },
+  "result": {
+    "item": "supplementaries:slingshot"
+  }
+}

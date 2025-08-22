@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "faucet"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "supplementaries:faucet"
+  },
+  "result_fluid": {
+    "fluid": "tfc:metal/steel",
+    "amount": 200
+  },
+  "temperature": 1540
+}

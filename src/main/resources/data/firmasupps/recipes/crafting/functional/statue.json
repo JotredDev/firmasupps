@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "statue"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:clay"
+    },
+    "1": {
+      "tag": "forge:smooth_stone_slab"
+    }
+  },
+  "result": {
+    "item": "supplementaries:statue"
+  }
+}

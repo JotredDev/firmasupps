@@ -1,0 +1,18 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "globe"
+    },
+    {
+      "type": "supplementaries:flag",
+      "flag": "antique_ink"
+    }
+  ],
+  "ingredient": {
+    "item": "supplementaries:globe_sepia"
+  },
+  "heat_capacity": 6.667,
+  "forging_temperature": 636,
+  "welding_temperature": 848
+}

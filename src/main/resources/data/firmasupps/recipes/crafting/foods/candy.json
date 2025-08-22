@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "candy"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:paper"
+    }
+  ],
+  "result": {
+    "item": "supplementaries:candy",
+    "count": 8
+  }
+}

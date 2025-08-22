@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "pancake"
+    }
+  ],
+  "type": "tfc:advanced_shapeless_crafting",
+  "ingredients": [
+    {
+      "type": "tfc:fluid_item",
+      "fluid_ingredient": {
+        "ingredient": "minecraft:milk",
+        "amount": 500
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "tag": "tfc:foods/flour"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "minecraft:egg"
+      }
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "firmasupps:pancake",
+    "count": 3
+  }
+}

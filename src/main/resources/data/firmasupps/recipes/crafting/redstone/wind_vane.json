@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "wind_vane"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 0 ",
+    "121",
+    " 3 "
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:metal/sheet/wrought_iron"
+    },
+    "1": {
+      "item": "tfc:brass_mechanisms"
+    },
+    "2": {
+      "item": "tfc:metal/bars/wrought_iron"
+    },
+    "3": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "supplementaries:wind_vane"
+  }
+}

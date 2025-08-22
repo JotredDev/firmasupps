@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "wicker_fence"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "101",
+    "101"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:jute_fiber"
+    },
+    "1": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "supplementaries:wicker_fence"
+  }
+}

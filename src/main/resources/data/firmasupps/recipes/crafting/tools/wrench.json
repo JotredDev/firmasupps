@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "wrench"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 0",
+    " 1 ",
+    " 0 "
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:metal/rod/copper"
+    },
+    "1": {
+      "item": "tfc:brass_mechanisms"
+    }
+  },
+  "result": {
+    "item": "supplementaries:wrench"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "cannonball"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 0 ",
+    "010",
+    " 0 "
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:metal/sheet/wrought_iron"
+    },
+    "1": {
+      "item": "tfc:metal/double_ingot/wrought_iron"
+    }
+  },
+  "result": {
+    "item": "supplementaries:cannonball",
+    "count": 8
+  }
+}

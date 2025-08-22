@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "candle_holder"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:candle/orange"
+    },
+    "1": {
+      "item": "tfc:metal/rod/steel"
+    }
+  },
+  "result": {
+    "item": "firmasupps:candle_holder/orange"
+  }
+}

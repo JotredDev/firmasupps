@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "candle_holder"
+    }
+  ],
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "ingredient": {
+      "item": "firmasupps:candle_holder"
+    }
+  },
+  "input_fluid": {
+    "ingredient": "tfc:yellow_dye",
+    "amount": 25
+  },
+  "output_item": {
+      "item": "firmasupps:candle_holder/yellow"
+  },
+  "duration": 1000
+}

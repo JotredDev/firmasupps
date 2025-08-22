@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "globe"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "supplementaries:globe"
+  },
+  "result_fluid": {
+    "fluid": "tfc:metal/gold",
+    "amount": 400
+  },
+  "temperature": 1060
+}

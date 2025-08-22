@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "goblet"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "firmasupps:goblet"
+  },
+  "result_fluid": {
+    "fluid": "tfc:metal/cast_iron",
+    "amount": 50
+  },
+  "temperature": 1535
+}

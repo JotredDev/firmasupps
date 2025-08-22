@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "awning"
+    }
+  ],
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "ingredient": {
+      "tag": "supplementaries:awnings"
+    }
+  },
+  "input_fluid": {
+    "ingredient": "tfc:lye",
+    "amount": 25
+  },
+  "output_item": {
+    "item": "supplementaries:awning"
+  },
+  "duration": 1000
+}

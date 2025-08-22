@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values":
+  [
+    "tfc:wattle/white",
+    "tfc:wattle/light_gray",
+    "tfc:wattle/gray",
+    "tfc:wattle/black",
+    "tfc:wattle/brown",
+    "tfc:wattle/red",
+    "tfc:wattle/orange",
+    "tfc:wattle/yellow",
+    "tfc:wattle/lime",
+    "tfc:wattle/green",
+    "tfc:wattle/cyan",
+    "tfc:wattle/light_blue",
+    "tfc:wattle/blue",
+    "tfc:wattle/purple",
+    "tfc:wattle/magenta",
+    "tfc:wattle/pink",
+    "tfc:wattle"
+  ]
+}

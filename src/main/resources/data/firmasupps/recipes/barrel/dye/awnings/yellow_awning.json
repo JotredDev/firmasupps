@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "awning"
+    }
+  ],
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "ingredient": {
+      "item": "supplementaries:awning"
+    }
+  },
+  "input_fluid": {
+    "ingredient": "tfc:yellow_dye",
+    "amount": 25
+  },
+  "output_item": {
+    "item": "supplementaries:awning_yellow"
+  },
+  "duration": 1000
+}

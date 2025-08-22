@@ -1,0 +1,11 @@
+
+Potential future TODO:
+a. Possible compat for Amendments (split off from Supplementaries) & Supplementaries Squared (Addon)
+b. Soap in-world behaviour
+c. Retexturing various blocks to fit TFC color palettes
+d. Flower box accepting TFC large flowers (only accepts regular large flowers)
+e. Gunpowder trail working with TFC gunpowder bowls & powderkegs
+
+Observed TFC bugs
+- TFC candles get broken by pistons, TFC colored candles do not
+- TFC candles lastUpdateTick doesn't get reset when put out manually, leading to a "time remaining" Jade tooltip

@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "doormat"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "00"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:burlap_cloth"
+    }
+  },
+  "result": {
+    "item": "supplementaries:doormat"
+  }
+}

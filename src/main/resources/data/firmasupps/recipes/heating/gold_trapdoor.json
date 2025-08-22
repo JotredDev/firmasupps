@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "gold_trapdoor"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "supplementaries:gold_trapdoor"
+  },
+  "result_fluid": {
+    "fluid": "tfc:metal/gold",
+    "amount": 200
+  },
+  "temperature": 1060
+}

@@ -1,0 +1,29 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "cog_block"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "121",
+    "010"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:metal/sheet/copper"
+    },
+    "1": {
+      "item": "tfc:brass_mechanisms"
+    },
+    "2": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "result": {
+    "item": "supplementaries:cog_block",
+    "count": 6
+  }
+}

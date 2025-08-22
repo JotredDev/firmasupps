@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "sack"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "0 0",
+    "000"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:burlap_cloth"
+    },
+    "1": {
+      "tag": "forge:string"
+    }
+  },
+  "result": {
+    "item": "firmasupps:sack"
+  }
+}

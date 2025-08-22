@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "globe"
+    }
+  ],
+  "ingredient": {
+    "item": "supplementaries:globe"
+  },
+  "heat_capacity": 6.667,
+  "forging_temperature": 636,
+  "welding_temperature": 848
+}

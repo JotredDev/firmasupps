@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "bomb"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "232",
+    "020"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:gunpowder"
+    },
+    "1": {
+      "tag": "forge:string"
+    },
+    "2": {
+      "item": "tfc:metal/sheet/steel"
+    },
+    "3": {
+      "item": "minecraft:fire_charge"
+    }
+  },
+  "result": {
+    "item": "supplementaries:bomb",
+    "count": 4
+  }
+}

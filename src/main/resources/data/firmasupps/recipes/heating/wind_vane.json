@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "wind_vane"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "supplementaries:wind_vane"
+  },
+  "result_fluid": {
+    "fluid": "tfc:metal/cast_iron",
+    "amount": 225
+  },
+  "temperature": 1535
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values":
+  [
+    "tfc:powder/native_copper",
+    "tfc:powder/malachite",
+    "tfc:powder/tetrahedrite",
+    "tfc:powder/bismuthinite"
+  ]
+}

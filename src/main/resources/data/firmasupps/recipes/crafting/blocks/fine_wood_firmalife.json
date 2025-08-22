@@ -1,0 +1,30 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "fine_wood"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "000",
+    "010",
+    "000"
+  ],
+  "key": {
+    "0": {
+      "tag": "minecraft:logs"
+    },
+    "1": {
+      "item": "firmalife:beeswax"
+    }
+  },
+  "result": {
+    "item": "supplementaries:fine_wood",
+    "count": 8
+  }
+}

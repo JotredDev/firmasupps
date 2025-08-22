@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "bunting"
+    }
+  ],
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "ingredient": {
+      "item": "supplementaries:bunting"
+    }
+  },
+  "input_fluid": {
+    "ingredient": "tfc:gray_dye",
+    "amount": 25
+  },
+  "output_item": {
+    "item": "supplementaries:bunting",
+    "nbt": {
+      "Color": "gray"
+    }
+  },
+  "duration": 1000
+}

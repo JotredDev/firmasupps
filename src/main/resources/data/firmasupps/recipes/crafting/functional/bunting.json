@@ -1,0 +1,29 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "bunting"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "000",
+    " 1 ",
+    " 1 "
+  ],
+  "key": {
+    "0": {
+      "tag": "forge:string"
+    },
+    "1": {
+      "tag": "tfc:high_quality_cloth"
+    }
+  },
+  "result": {
+    "item": "supplementaries:bunting",
+    "nbt": {
+      "Color": "white"
+    },
+    "count": 6
+  }
+}

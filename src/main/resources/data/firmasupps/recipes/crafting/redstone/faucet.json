@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "faucet"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 0 ",
+    "111",
+    "  1"
+  ],
+  "key": {
+    "0": {
+      "tag": "forge:rods/wooden"
+    },
+    "1": {
+      "item": "tfc:metal/rod/steel"
+    }
+  },
+  "result": {
+    "item": "supplementaries:faucet"
+  }
+}

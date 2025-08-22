@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "candle_holders"
+    }
+  ],
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "ingredient": {
+      "tag": "firmasupps:candle_holders"
+    }
+  },
+  "input_fluid": {
+    "ingredient": "tfc:lye",
+    "amount": 25
+  },
+  "output_item": {
+      "item": "firmasupps:candle_holder"
+  },
+  "duration": 1000
+}

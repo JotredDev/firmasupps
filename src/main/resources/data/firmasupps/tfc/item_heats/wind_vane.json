@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "wind_vane"
+    }
+  ],
+  "ingredient": {
+    "item": "supplementaries:wind_vane"
+  },
+  "heat_capacity": 6.429,
+  "forging_temperature": 921,
+  "welding_temperature": 1228
+}

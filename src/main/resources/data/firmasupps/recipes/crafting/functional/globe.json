@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "globe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 00",
+    " 20",
+    "01 "
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:metal/rod/gold"
+    },
+    "1": {
+      "item": "tfc:metal/sheet/gold"
+    },
+    "2": {
+      "tag": "tfc:dirt"
+    }
+  },
+  "result": {
+    "item": "supplementaries:globe"
+  }
+}

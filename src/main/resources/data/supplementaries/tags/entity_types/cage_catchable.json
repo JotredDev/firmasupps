@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "tfc:bluegill",
+    "tfc:cat",
+    "tfc:chicken",
+    "tfc:crappie",
+    "tfc:crayfish",
+    "tfc:duck",
+    "tfc:fox",
+    "tfc:frog",
+    "tfc:horseshoe_crab",
+    "tfc:isopod",
+    "tfc:jellyfish",
+    "tfc:lake_trout",
+    "tfc:largemouth_bass",
+    "tfc:lobster",
+    "tfc:ocelot",
+    "tfc:penguin",
+    "tfc:pufferfish",
+    "tfc:quail",
+    "tfc:rabbit",
+    "tfc:rainbow_trout",
+    "tfc:rat",
+    "tfc:salmon",
+    "tfc:smallmouth_bass",
+    "tfc:tropical_fish",
+    "tfc:turtle"
+  ]
+}

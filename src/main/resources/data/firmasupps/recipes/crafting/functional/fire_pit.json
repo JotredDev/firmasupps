@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "fire_pit"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 0 ",
+    "121",
+    " 1 "
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:fire_charge"
+    },
+    "1": {
+      "item": "tfc:metal/sheet/copper"
+    },
+    "2": {
+      "item": "tfc:ore/bituminous_coal"
+    }
+  },
+  "result": {
+    "item": "firmasupps:fire_pit"
+  }
+}

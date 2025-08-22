@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "bubble_blower"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 11",
+    " 11",
+    "0  "
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:metal/rod/wrought_iron"
+    },
+    "1": {
+      "item": "tfc:metal/chain/wrought_iron"
+    }
+  },
+  "result": {
+    "item": "supplementaries:bubble_blower",
+    "nbt": {
+      "Damage": 250
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "altimeter"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 0 ",
+    "121",
+    " 1 "
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:brass_mechanisms"
+    },
+    "1": {
+      "item": "tfc:metal/sheet/copper"
+    },
+    "2": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "supplementaries:altimeter"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "rope"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "0",
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:jute_fiber"
+    }
+  },
+  "result": {
+    "item": "supplementaries:rope",
+    "count": 3
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "cage"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "supplementaries:cage"
+  },
+  "result_fluid": {
+    "fluid": "tfc:metal/steel",
+    "amount": 650
+  },
+  "temperature": 1540
+}

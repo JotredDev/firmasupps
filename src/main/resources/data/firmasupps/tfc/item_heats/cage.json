@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "cage"
+    }
+  ],
+  "ingredient": {
+    "item": "supplementaries:cage"
+  },
+  "heat_capacity": 18.571,
+  "forging_temperature": 924,
+  "welding_temperature": 1232
+}

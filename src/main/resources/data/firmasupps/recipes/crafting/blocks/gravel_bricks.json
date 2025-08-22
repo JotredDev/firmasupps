@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "gravel_bricks"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "101",
+    "010",
+    "101"
+  ],
+  "key": {
+    "0": {
+      "tag": "tfc:mortar"
+    },
+    "1": {
+      "tag": "tfc:rock/gravel"
+    }
+  },
+  "result": {
+    "item": "supplementaries:gravel_bricks",
+    "count": 4
+  }
+}

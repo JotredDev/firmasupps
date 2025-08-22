@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "sconce"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "firmasupps:sconce"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "item": "firmasupps:sconce_lever"
+  }
+}

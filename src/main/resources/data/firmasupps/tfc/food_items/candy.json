@@ -1,0 +1,13 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "candy"
+    }
+  ],
+  "ingredient": {
+    "item": "supplementaries:candy"
+  },
+  "hunger": 1,
+  "decay_modifier": 0.2
+}

@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values":
+  [
+    "firmasupps:candle_holder/white",
+    "firmasupps:candle_holder/light_gray",
+    "firmasupps:candle_holder/gray",
+    "firmasupps:candle_holder/black",
+    "firmasupps:candle_holder/brown",
+    "firmasupps:candle_holder/red",
+    "firmasupps:candle_holder/orange",
+    "firmasupps:candle_holder/yellow",
+    "firmasupps:candle_holder/lime",
+    "firmasupps:candle_holder/green",
+    "firmasupps:candle_holder/cyan",
+    "firmasupps:candle_holder/light_blue",
+    "firmasupps:candle_holder/blue",
+    "firmasupps:candle_holder/purple",
+    "firmasupps:candle_holder/magenta",
+    "firmasupps:candle_holder/pink",
+    "firmasupps:candle_holder"
+  ]
+}

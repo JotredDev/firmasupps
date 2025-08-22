@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "blackboard"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "013",
+    "012",
+    "013"
+  ],
+  "key": {
+    "0": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "1": {
+      "item": "tfc:rock/raw/slate"
+    },
+    "2": {
+      "tag": "supplementaries:blackboard_white"
+    },
+    "3": {
+      "tag": "supplementaries:blackboard_black"
+    }
+  },
+  "result": {
+    "item": "supplementaries:blackboard",
+    "count": 2
+  }
+}

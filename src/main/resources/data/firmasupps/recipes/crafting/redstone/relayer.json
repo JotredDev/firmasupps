@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "relayer"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "001",
+    "223",
+    "001"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:cobblestone"
+    },
+    "1": {
+      "item": "tfc:brass_mechanisms"
+    },
+    "2": {
+      "item": "minecraft:redstone"
+    },
+    "3": {
+      "item": "tfc:metal/sheet/wrought_iron"
+    }
+  },
+  "result": {
+    "item": "supplementaries:relayer",
+    "count": 2
+  }
+}

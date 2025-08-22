@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "hourglass"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    " 0 ",
+    "010"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:glass"
+    },
+    "1": {
+      "item": "tfc:metal/sheet/gold"
+    }
+  },
+  "result": {
+    "item": "supplementaries:hourglass"
+  }
+}

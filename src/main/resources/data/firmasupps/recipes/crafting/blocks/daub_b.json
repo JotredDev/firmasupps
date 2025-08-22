@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "daub"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "10",
+    "01"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:clay_ball"
+    },
+    "1": {
+      "item": "tfc:straw"
+    }
+  },
+  "result": {
+    "item": "supplementaries:daub",
+    "count": 2
+  }
+}
