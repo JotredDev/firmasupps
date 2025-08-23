@@ -1,13 +1,13 @@
 
 Potential future TODO:
-a. Possible compat for Amendments (split off from Supplementaries) & Supplementaries Squared (Addon)
-b. Soap in-world behaviour
-c. Retexturing various blocks to fit TFC color palettes
-d. Flower box accepting TFC large flowers (only accepts regular large flowers)
+- Possible compat for Amendments (split off from Supplementaries) & Supplementaries Squared (Addon)
+- Soap in-world behaviour
+- Retexturing various blocks to fit TFC color palettes
+- Flower box accepting TFC large flowers (only accepts regular large flowers)
 DONE e. Gunpowder trail working with TFC gunpowder bowls & powderkegs
 DONE f. Sacks going on in the Curios back slot (perhaps config-able)
-g. Firmaciv boat compartment for Sacks
-h. Make Flax work as an alternative to jute (maybe in different climate band to give it a purpose)
+- Firmaciv boat compartment for Sacks
+- Make Flax work as an alternative to jute (maybe in different climate band to give it a purpose)
 DONE i. Make presents weigh less if empty
 
 Observed TFC bugs
