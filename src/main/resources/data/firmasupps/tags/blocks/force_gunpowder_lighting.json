@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "tfc:blast_furnace",
     "tfc:ceramic/bowl",
     "tfc:crucible",
     "tfc:dead_torch",

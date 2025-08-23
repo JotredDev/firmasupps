@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "tfc:blast_furnace",
     "tfc:firepit",
     "tfc:powderkeg",
     "#firmasupps:force_gunpowder_lighting"
