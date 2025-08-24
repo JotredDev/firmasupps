@@ -4,11 +4,7 @@ Potential future TODO:
 - Soap in-world behaviour
 - Retexturing various blocks to fit TFC color palettes
 - Flower box accepting TFC large flowers (only accepts regular large flowers)
-DONE e. Gunpowder trail working with TFC gunpowder bowls & powderkegs
-DONE f. Sacks going on in the Curios back slot (perhaps config-able)
-- Firmaciv boat compartment for Sacks
 - Make Flax work as an alternative to jute (maybe in different climate band to give it a purpose)
-DONE i. Make presents weigh less if empty
 
 Observed TFC bugs
 - TFC candles get broken by pistons, TFC colored candles do not

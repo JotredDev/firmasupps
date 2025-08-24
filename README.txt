@@ -12,6 +12,7 @@ There are various small adjustments made for compatibility, including, but not l
 - Pancakes store their expiration date, even when placed. All 8 pancakes you can store in a pancake block have their individual dates saved
 - Presents are huge and very heavy, like sealed large vessels / sealed barrels / anvils. This allows using them as actual presents, while preventing abusing presents for non-overburdening storage
 - Added small TFC mobs to the list of cage-able mobs
+- Gunpowder trails can now ignite TFC blocks. Everything from powderkegs to blast furnaces and firepits is affected!
 
 Limitations of Supplementaries and TFC mean that not everything works 1:1 as it does in Supplementaries, so here are the major changes that go beyond simple compatibility:
 - Sacks use the TFC overburdening system instead of the Supplementaries overencumberance system. Furthermore, they are fixed to 9 slots, but can hold large items (unlike large vessels)
@@ -27,6 +28,9 @@ Some features have not been made compatible for the time being:
 - Safes
 - Lumisene
 
+Besides that, there is also cross-compatibility with other TFC addons:
+- If you have installed Barrels 2012, you can also put a sack in your back slot, allowing you to carry it without getting overburdened
+- If you have installed Firma: Civilization, you can also place sacks in the compartment slots of your ships
 
 Keep in mind:
 This is not final, as more features will be added to, and completed from, the to-do list over time!
