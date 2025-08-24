@@ -353,17 +353,17 @@ public class FSSackCompartmentEntity extends AbstractCompartmentEntity implement
 
     public void playOpenSound()
     {
-        double d0 = this.getX() + 0.5;
+        double d0 = this.getX();
         double d1 = this.getY() + 1.0;
-        double d2 = this.getZ() + 0.5;
+        double d2 = this.getZ();
         this.level().playSound(null, d0, d1, d2, ModSounds.SACK_OPEN.get(), SoundSource.BLOCKS, 1.0F, this.level().random.nextFloat() * 0.1F + 0.95F);
     }
 
     public void playCloseSound()
     {
-        double d0 = this.getX() + 0.5;
+        double d0 = this.getX();
         double d1 = this.getY() + 1.0;
-        double d2 = this.getZ() + 0.5;
+        double d2 = this.getZ();
         this.level().playSound(null, d0, d1, d2, ModSounds.SACK_OPEN.get(), SoundSource.BLOCKS, 1.0F, this.level().random.nextFloat() * 0.1F + 0.8F);
     }
 
