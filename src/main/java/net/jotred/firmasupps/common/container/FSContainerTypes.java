@@ -6,6 +6,7 @@ import net.jotred.firmasupps.common.blockentities.FSSackBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -20,9 +21,13 @@ import static net.jotred.firmasupps.FirmaSupplementaries.*;
 public final class FSContainerTypes
 {
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(Registries.MENU, MOD_ID);
+    public static final DeferredRegister<MenuType<?>> FIRMACIV_CONTAINERS = DeferredRegister.create(Registries.MENU, MOD_ID);
 
     public static final RegistryObject<MenuType<FSSackContainer>> SACK =
         FSContainerTypes.<FSSackBlockEntity, FSSackContainer>registerBlock("sack", FSBlockEntities.SACK, FSSackContainer::create);
+
+    public static final RegistryObject<MenuType<FSSackCompartmentContainer>> SACK_COMPARTMENT_MENU = FIRMACIV_CONTAINERS.register("sack_compartment_menu",
+        () -> IForgeMenuType.create(FSSackCompartmentContainer::fromNetwork));
 
 
     private static <T extends InventoryBlockEntity<?>, C extends BlockEntityContainer<T>> RegistryObject<MenuType<C>> registerBlock(String name, Supplier<BlockEntityType<T>> type, BlockEntityContainer.Factory<T, C> factory)

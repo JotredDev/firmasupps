@@ -3,11 +3,11 @@ package net.jotred.firmasupps;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.blocks.FSBlocks;
 import net.jotred.firmasupps.common.container.FSContainerTypes;
+import net.jotred.firmasupps.common.entities.FSEntities;
 import net.jotred.firmasupps.common.items.FSCreativeTabs;
 import net.jotred.firmasupps.common.items.FSItems;
 import net.jotred.firmasupps.config.FSConfig;
 
-import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -44,6 +44,12 @@ public class FirmaSupplementaries
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             ClientEventHandler.init();
+        }
+
+        if (ModList.get().isLoaded("firmaciv"))
+        {
+            FSContainerTypes.FIRMACIV_CONTAINERS.register(bus);
+            FSEntities.FIRMACIV_ENTITY_TYPES.register(bus);
         }
     }
 

@@ -2,6 +2,7 @@ package net.jotred.firmasupps;
 
 import net.jotred.firmasupps.client.render.blockentity.FSGobletBlockEntityRenderer;
 import net.jotred.firmasupps.client.screen.FSSackScreen;
+import net.jotred.firmasupps.client.screen.FSSackCompartmentScreen;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.blocks.FSBlocks;
 import net.jotred.firmasupps.common.container.FSContainerTypes;
@@ -10,6 +11,7 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -30,6 +32,11 @@ public class ClientEventHandler
         event.enqueueWork(() ->
         {
             MenuScreens.register(FSContainerTypes.SACK.get(), FSSackScreen::new);
+
+            if (ModList.get().isLoaded("firmaciv"))
+            {
+                MenuScreens.register(FSContainerTypes.SACK_COMPARTMENT_MENU.get(), FSSackCompartmentScreen::new);
+            }
         });
 
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.CANDLE_HOLDER.get(), RenderType.cutout());
