@@ -31,7 +31,7 @@ import static net.jotred.firmasupps.FirmaSupplementaries.*;
 public class FSSackBlockEntity extends InventoryBlockEntity<FSSackBlockEntity.SackInventory> implements Nameable
 {
     public static final int SLOTS = 9;
-    private static final Component NAME = Component.translatable(MOD_ID + ".block_entity.sack");
+    public static final Component NAME = Component.translatable("block_entity." + MOD_ID + ".sack");
 
     private final ContainerOpenersCounter openersCounter = new ContainerCounter();
 
@@ -68,11 +68,6 @@ public class FSSackBlockEntity extends InventoryBlockEntity<FSSackBlockEntity.Sa
     public Component getCustomName()
     {
         return this.customName;
-    }
-
-    public ItemStack getItem(int slot)
-    {
-        return inventory.extractItem(slot, 64, true);
     }
 
     /**
@@ -157,12 +152,14 @@ public class FSSackBlockEntity extends InventoryBlockEntity<FSSackBlockEntity.Sa
             FSSackBlockEntity.this.updateBlockState(state, true);
         }
 
-        protected void onClose(Level level, BlockPos pos, BlockState state) {
+        protected void onClose(Level level, BlockPos pos, BlockState state)
+        {
             FSSackBlockEntity.this.playCloseSound();
             FSSackBlockEntity.this.updateBlockState(state, false);
         }
 
-        protected void openerCountChanged(Level level, BlockPos pos, BlockState state, int i, int i1) {
+        protected void openerCountChanged(Level level, BlockPos pos, BlockState state, int i, int i1)
+        {
         }
 
         protected boolean isOwnContainer(Player player)
