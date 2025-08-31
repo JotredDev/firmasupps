@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "wrench"
+    }
+  ],
+  "type": "tfc:anvil",
+  "input": {
+    "item": "tfc:metal/double_ingot/copper"
+  },
+  "result": {
+    "item": "supplementaries:wrench"
+  },
+  "tier": 1,
+  "rules": [
+    "upset_last",
+    "bend_second_last",
+    "draw_third_last"
+  ],
+  "apply_forging_bonus": true
+}
