@@ -1,5 +1,6 @@
 package net.jotred.firmasupps;
 
+import net.jotred.firmasupps.client.RenderEventHandler;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.blocks.FSBlocks;
 import net.jotred.firmasupps.common.container.FSContainerTypes;
@@ -44,6 +45,7 @@ public class FirmaSupplementaries
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             ClientEventHandler.init();
+            RenderEventHandler.init();
         }
 
         if (ModList.get().isLoaded("firmaciv"))

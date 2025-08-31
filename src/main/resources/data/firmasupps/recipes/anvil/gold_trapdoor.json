@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "flag": "gold_trapdoor",
+      "type": "supplementaries:flag"
+    }
+  ],
   "type": "tfc:anvil",
   "input": {
     "item": "tfc:metal/sheet/gold"

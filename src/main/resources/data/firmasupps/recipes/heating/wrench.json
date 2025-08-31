@@ -11,7 +11,8 @@
   },
   "result_fluid": {
     "fluid": "tfc:metal/copper",
-    "amount": 150
+    "amount": 200
   },
-  "temperature": 1080
+  "temperature": 1080,
+  "use_durability": true
 }
