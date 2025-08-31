@@ -6,14 +6,19 @@ import net.jotred.firmasupps.client.screen.FSSackCompartmentScreen;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.blocks.FSBlocks;
 import net.jotred.firmasupps.common.container.FSContainerTypes;
+import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
+import static net.jotred.firmasupps.FirmaSupplementaries.*;
 
 
 public class ClientEventHandler
@@ -24,6 +29,8 @@ public class ClientEventHandler
 
         bus.addListener(ClientEventHandler::clientSetup);
         bus.addListener(ClientEventHandler::registerEntityRenderers);
+
+        ClientHelper.registerOptionalTexturePack(new ResourceLocation(MOD_ID, "tfc_style_supplementaries"), Component.literal("TFC-ified Supplementaries"), true);
     }
 
     @SuppressWarnings("deprecation")
