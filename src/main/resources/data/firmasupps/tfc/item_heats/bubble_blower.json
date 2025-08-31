@@ -6,7 +6,7 @@
     }
   ],
   "ingredient": {
-    "tag": "forge:rods/wrought_iron"
+    "item": "supplementaries:bubble_blower"
   },
   "heat_capacity": 1.429,
   "forging_temperature": 921,
