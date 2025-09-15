@@ -13,6 +13,7 @@ There are various small adjustments made for compatibility, including, but not l
 - Presents are huge and very heavy, like sealed large vessels / sealed barrels / anvils. This allows using them as actual presents, while preventing abusing presents for non-overburdening storage
 - Added small TFC mobs to the list of cage-able mobs
 - Gunpowder trails can now ignite TFC blocks. Everything from powderkegs to blast furnaces and firepits is affected!
+- TFC chains can be used in the pulley
 
 Limitations of Supplementaries and TFC mean that not everything works 1:1 as it does in Supplementaries, so here are the major changes that go beyond simple compatibility:
 - Sacks use the TFC overburdening system instead of the Supplementaries overencumberance system. Furthermore, they are fixed to 9 slots, but can hold large items (unlike large vessels)
