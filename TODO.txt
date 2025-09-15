@@ -2,10 +2,5 @@
 Potential future TODO:
 - Possible compat for Amendments (split off from Supplementaries) & Supplementaries Squared (Addon)
 - Soap in-world behaviour
-- Retexturing various blocks to fit TFC color palettes
 - Flower box accepting TFC large flowers (only accepts regular large flowers)
 - Make Flax work as an alternative to jute (maybe in different climate band to give it a purpose)
-
-Observed TFC bugs
-- TFC candles get broken by pistons, TFC colored candles do not
-- TFC candles lastUpdateTick doesn't get reset when put out manually, leading to a "time remaining" Jade tooltip
