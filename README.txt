@@ -17,7 +17,7 @@ There are various small adjustments made for compatibility, including, but not l
 Limitations of Supplementaries and TFC mean that not everything works 1:1 as it does in Supplementaries, so here are the major changes that go beyond simple compatibility:
 - Sacks use the TFC overburdening system instead of the Supplementaries overencumberance system. Furthermore, they are fixed to 9 slots, but can hold large items (unlike large vessels)
 - Planters are not permanently hydrated, instead making fertilizer more efficient (multiplier can be set by config)
-- Sconce levers do not invert their redstone signal if they go out, since they have automatic burnout (but it can be reenabled by config)
+- Sconce levers still invert their signal upon going out. However, this can be prevented by applying glue to it
 
 Some features have not been made compatible for the time being:
 - Flax (mostly replaced by TFC jute fiber)
