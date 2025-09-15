@@ -12,7 +12,6 @@ public class FSServerConfig
     public final ForgeConfigSpec.IntValue candleHolderTicks;
     public final ForgeConfigSpec.IntValue sconceTicks;
     public final ForgeConfigSpec.IntValue firePitTicks;
-    public final ForgeConfigSpec.BooleanValue uniformSconceLeverBehaviour;
     public final ForgeConfigSpec.DoubleValue planterNutrientMultiplier;
 
     FSServerConfig(Builder innerBuilder)
@@ -32,10 +31,6 @@ public class FSServerConfig
         firePitTicks = builder.apply("firePitTicks")
             .comment("Number of ticks required for a fire pit to burn out (1000 = 1 in game hour = 50 seconds), default is 120 hours. Set to -1 to disable fire pit burnout.")
             .defineInRange("firePitTicks",120000, -1, Integer.MAX_VALUE);
-
-        uniformSconceLeverBehaviour = builder.apply("uniformSconceLeverBehaviour")
-            .comment("Change the behaviour of the sconce lever to not invert its redstone signal if it is not lit, default is true. Set to false to experience the same behaviour as in regular Supplementaries")
-            .define("uniformSconceLeverBehaviour", true);
 
         planterNutrientMultiplier = builder.apply("planterNutrientMultiplier")
             .comment("Multiplier for nutrients added to planters, default is 1.25. Set to 1 to make planters equivalent to regular farmland")
