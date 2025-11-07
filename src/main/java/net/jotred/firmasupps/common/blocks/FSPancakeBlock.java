@@ -54,7 +54,7 @@ public class FSPancakeBlock extends PancakeBlock implements IForgeBlockExtension
 
         if (stack.getItem().equals(FSItems.PANCAKE.asItem()))
         {
-            if (level.getBlockEntity(pos) instanceof FSPancakeBlockEntity pancake && placer instanceof ServerPlayer)
+            if (level.getBlockEntity(pos) instanceof FSPancakeBlockEntity pancake && player instanceof ServerPlayer)
             {
                 pancake.addPancake(stack);
             }
