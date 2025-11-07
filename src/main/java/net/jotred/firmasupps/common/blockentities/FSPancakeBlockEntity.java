@@ -1,20 +1,24 @@
 package net.jotred.firmasupps.common.blockentities;
 
+import java.util.ArrayList;
+import java.util.List;
+import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.util.INBTSerializable;
+import net.neoforged.neoforge.common.util.INBTSerializable;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntity;
 import net.dries007.tfc.util.Helpers;
 
-public class FSPancakeBlockEntity extends TFCBlockEntity implements INBTSerializable<CompoundTag>
+public class FSPancakeBlockEntity extends TFCBlockEntity// implements INBTSerializable<CompoundTag>
 {
     private static final int MAX_PANCAKES = 8;
-    private final ItemStack[] pancakes;
+    private final List<ItemStack> pancakes;
 
     public FSPancakeBlockEntity(BlockPos pos, BlockState state)
     {
@@ -24,30 +28,32 @@ public class FSPancakeBlockEntity extends TFCBlockEntity implements INBTSerializ
     public FSPancakeBlockEntity(BlockEntityType<? extends FSPancakeBlockEntity> type, BlockPos pos, BlockState state)
     {
         super(type, pos, state);
-        pancakes = new ItemStack[MAX_PANCAKES];
+        pancakes = new ArrayList<>(MAX_PANCAKES);
     }
 
-    public void storePancake(int index, ItemStack pancake)
+    public void addPancake(ItemStack pancake)
     {
-        pancakes[index] = pancake.copyWithCount(1);
+        pancakes.add(pancake.copyWithCount(1));
+        LogUtils.getLogger().warn("added one, now got {} pancakes", pancakes.size());
     }
 
-    public ItemStack getPancake(int index)
+    public ItemStack getPancake()
     {
-        return pancakes[index];
-    }
-
-    @Override
-    protected void saveAdditional(CompoundTag tag)
-    {
-        tag.put("pancakeNBT", Helpers.writeItemStacksToNbt(pancakes));
-        super.saveAdditional(tag);
+        LogUtils.getLogger().warn("removing one, at {} pancakes", pancakes.size());
+        return pancakes.removeLast();
     }
 
     @Override
-    protected void loadAdditional(CompoundTag tag)
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider provider)
     {
-        Helpers.readItemStacksFromNbt(pancakes, tag.getList("pancakeNBT", ListTag.TAG_COMPOUND));
-        super.loadAdditional(tag);
+        tag.put("pancakeNBT", Helpers.writeItemStacksToNbt(provider, pancakes));
+        super.saveAdditional(tag, provider);
+    }
+
+    @Override
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider provider)
+    {
+        Helpers.readItemStacksFromNbt(provider, pancakes, tag.getList("pancakeNBT", ListTag.TAG_COMPOUND));
+        super.loadAdditional(tag, provider);
     }
 }

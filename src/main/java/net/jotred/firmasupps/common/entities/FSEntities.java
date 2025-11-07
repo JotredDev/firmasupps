@@ -1,5 +1,5 @@
 package net.jotred.firmasupps.common.entities;
-
+/*
 import java.util.Locale;
 import com.alekiponi.alekiships.common.entity.vehiclehelper.CompartmentType;
 import com.alekiponi.alekiships.common.entity.vehiclehelper.compartment.AbstractCompartmentEntity;
@@ -35,3 +35,4 @@ public class FSEntities
         });
     }
 }
+*/

@@ -22,7 +22,7 @@ public class FSSconceItem extends StandingAndWallBlockItem
     {
         final Level level = context.getLevel();
         final BlockPos pos = context.getClickedPos();
-        if (StartFireEvent.startFire(level, pos, level.getBlockState(pos), context.getClickedFace(), context.getPlayer(), context.getItemInHand(), StartFireEvent.FireStrength.WEAK))
+        if (StartFireEvent.startFire(level, pos, level.getBlockState(pos), context.getClickedFace(), context.getPlayer(), context.getItemInHand(), StartFireEvent.FireStrength.WEAK, -1))
         {
             return InteractionResult.SUCCESS;
         }

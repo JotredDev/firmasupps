@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -19,17 +20,16 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.blocks.EntityBlockExtension;
 import net.dries007.tfc.common.blocks.ExtendedBlock;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
-import net.dries007.tfc.common.capabilities.Capabilities;
 import net.dries007.tfc.common.fluids.FluidHelpers;
-import net.dries007.tfc.util.Drinkable;
+import net.dries007.tfc.util.data.Drinkable;
 import net.dries007.tfc.util.loot.CopyFluidFunction;
 
 public class FSGobletBlock extends ExtendedBlock implements EntityBlockExtension
@@ -43,7 +43,7 @@ public class FSGobletBlock extends ExtendedBlock implements EntityBlockExtension
 
     @Override
     @SuppressWarnings("deprecation")
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result)
+    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result)
     {
         final @Nullable FSGobletBlockEntity goblet = level.getBlockEntity(pos, FSBlockEntities.GOBLET.get()).orElse(null);
 
@@ -53,7 +53,7 @@ public class FSGobletBlock extends ExtendedBlock implements EntityBlockExtension
 
             if (hand.equals(InteractionHand.MAIN_HAND) && item.isEmpty())
             {
-                final IFluidHandler handler = goblet.getCapability(Capabilities.FLUID).resolve().orElse(null);
+                final IFluidHandler handler = goblet.getTank(null);
 
                 if (handler != null)
                 {
@@ -64,26 +64,18 @@ public class FSGobletBlock extends ExtendedBlock implements EntityBlockExtension
                     if (drink != null && !level.isClientSide)
                     {
                         drink.onDrink(player, drained.getAmount());
-                        return InteractionResult.SUCCESS;
+                        return ItemInteractionResult.SUCCESS;
                     }
                 }
             }
             else if (FluidHelpers.transferBetweenBlockEntityAndItem(item, goblet, player, hand))
             {
                 goblet.markForSync();
-                return InteractionResult.sidedSuccess(level.isClientSide);
+                return ItemInteractionResult.sidedSuccess(level.isClientSide);
             }
         }
 
-        return InteractionResult.PASS;
-    }
-
-    @Override
-    public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player)
-    {
-        ItemStack stack = super.getCloneItemStack(state, target, level, pos, player);
-        CopyFluidFunction.copyToItem(stack, level.getBlockEntity(pos));
-        return stack;
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     @Nullable

@@ -1,5 +1,5 @@
 package net.jotred.firmasupps.common.container;
-
+/*
 import net.jotred.firmasupps.common.entities.compartment.FSSackCompartmentEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.Entity;
@@ -69,3 +69,4 @@ public class FSSackCompartmentContainer extends Container
         });
     }
 }
+*/

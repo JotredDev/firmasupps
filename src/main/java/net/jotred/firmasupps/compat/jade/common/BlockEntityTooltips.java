@@ -8,7 +8,7 @@ import net.jotred.firmasupps.common.blocks.FSFirePitBlock;
 import net.jotred.firmasupps.common.blocks.FSSconceBlock;
 import net.jotred.firmasupps.common.blocks.FSSconceLeverBlock;
 import net.jotred.firmasupps.common.blocks.FSSconceWallBlock;
-import net.jotred.firmasupps.config.FSConfig;
+import net.jotred.firmasupps.config.FSServerConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -26,9 +26,9 @@ public class BlockEntityTooltips
         callback.register("fire_pit", FIRE_PIT, FSFirePitBlock.class);
     }
 
-    public static final BlockEntityTooltip CANDLE_HOLDER = tickCounter(FSConfig.SERVER.candleHolderTicks);
-    public static final BlockEntityTooltip SCONCE = tickCounter(FSConfig.SERVER.sconceTicks);
-    public static final BlockEntityTooltip FIRE_PIT = tickCounter(FSConfig.SERVER.firePitTicks);
+    public static final BlockEntityTooltip CANDLE_HOLDER = tickCounter(FSServerConfig.candleHolderTicks);
+    public static final BlockEntityTooltip SCONCE = tickCounter(FSServerConfig.sconceTicks);
+    public static final BlockEntityTooltip FIRE_PIT = tickCounter(FSServerConfig.firePitTicks);
 
 
     public static void timeLeft(Level level, Consumer<Component> tooltip, long ticks)

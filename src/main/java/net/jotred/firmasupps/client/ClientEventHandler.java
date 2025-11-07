@@ -1,36 +1,34 @@
-package net.jotred.firmasupps;
+package net.jotred.firmasupps.client;
 
 import net.jotred.firmasupps.client.render.blockentity.FSGobletBlockEntityRenderer;
 import net.jotred.firmasupps.client.screen.FSSackScreen;
-import net.jotred.firmasupps.client.screen.FSSackCompartmentScreen;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.blocks.FSBlocks;
 import net.jotred.firmasupps.common.container.FSContainerTypes;
 import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+
+import net.dries007.tfc.util.Helpers;
 
 import static net.jotred.firmasupps.FirmaSupplementaries.*;
 
 
 public class ClientEventHandler
 {
-    public static void init()
+    public static void init(IEventBus bus, ModContainer mod)
     {
-        final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
         bus.addListener(ClientEventHandler::clientSetup);
+        bus.addListener(ClientEventHandler::registerMenuScreens);
         bus.addListener(ClientEventHandler::registerEntityRenderers);
 
-        ClientHelper.registerOptionalTexturePack(new ResourceLocation(MOD_ID, "tfc_style_supplementaries"), Component.literal("TFC-ified Supplementaries"), true);
+        ClientHelper.registerOptionalTexturePack(Helpers.resourceLocation(MOD_ID, "tfc_style_supplementaries"), Component.literal("TFC-ified Supplementaries"), true);
     }
 
     @SuppressWarnings("deprecation")
@@ -38,12 +36,12 @@ public class ClientEventHandler
     {
         event.enqueueWork(() ->
         {
-            MenuScreens.register(FSContainerTypes.SACK.get(), FSSackScreen::new);
-
+/*
             if (ModList.get().isLoaded("firmaciv"))
             {
                 MenuScreens.register(FSContainerTypes.SACK_COMPARTMENT_MENU.get(), FSSackCompartmentScreen::new);
             }
+*/
         });
 
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.CANDLE_HOLDER.get(), RenderType.cutout());
@@ -58,6 +56,11 @@ public class ClientEventHandler
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.SACK.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.PLANTER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.GOBLET.get(), RenderType.cutout());
+    }
+
+    public static void registerMenuScreens(RegisterMenuScreensEvent event)
+    {
+        event.register(FSContainerTypes.SACK.get(), FSSackScreen::new);
     }
 
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event)

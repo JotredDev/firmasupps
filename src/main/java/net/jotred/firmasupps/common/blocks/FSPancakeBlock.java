@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -18,7 +19,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.dries007.tfc.common.blocks.EntityBlockExtension;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.IForgeBlockExtension;
-import net.dries007.tfc.common.capabilities.food.TFCFoodData;
+import net.dries007.tfc.common.player.IPlayerInfo;
+import net.dries007.tfc.common.player.PlayerInfo;
 
 public class FSPancakeBlock extends PancakeBlock implements IForgeBlockExtension, EntityBlockExtension
 {
@@ -37,23 +39,30 @@ public class FSPancakeBlock extends PancakeBlock implements IForgeBlockExtension
     }
 
     /**
-     * Since the superclass only calls {@link TFCFoodData#eat(int, float)} instead of {@link TFCFoodData#eat(Item, ItemStack, LivingEntity)},
+     * Since the superclass only calls {@link PlayerInfo#eat(int, float)} instead of {@link PlayerInfo#eat(ItemStack)},
      * we have to call it ourselves to be able to actually modify the food and nutrition data of the player.
      */
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit)
+    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit)
     {
         // Eating the last pancake destroys the block and therefore also the blockentity, so we need to retrieve data before using the superclass method
-        final int pancakeIndex = state.getValue(PANCAKES) - 1;
         ItemStack fakePancakeStack = null;
         if (level.getBlockEntity(pos) instanceof FSPancakeBlockEntity pancake)
         {
-            fakePancakeStack = pancake.getPancake(pancakeIndex);
+            fakePancakeStack = pancake.getPancake();
         }
 
-        InteractionResult result = super.use(state, level, pos, player, hand, hit);
+        if (stack.getItem().equals(FSItems.PANCAKE.asItem()))
+        {
+            if (level.getBlockEntity(pos) instanceof FSPancakeBlockEntity pancake && placer instanceof ServerPlayer)
+            {
+                pancake.addPancake(stack);
+            }
+        }
 
-        if (result.equals(InteractionResult.CONSUME) || result.equals(InteractionResult.SUCCESS))
+        ItemInteractionResult result = super.useItemOn(stack, state, level, pos, player, hand, hit);
+
+        if (result.equals(ItemInteractionResult.CONSUME) || result.equals(ItemInteractionResult.SUCCESS))
         {
             if (player instanceof ServerPlayer)
             {
@@ -64,7 +73,8 @@ public class FSPancakeBlock extends PancakeBlock implements IForgeBlockExtension
                     fakePancakeStack = new ItemStack(FSItems.PANCAKE.get());
                 }
 
-                player.getFoodData().eat(FSItems.PANCAKE.get(), fakePancakeStack, player);
+                IPlayerInfo playerInfo = IPlayerInfo.get(player);
+                playerInfo.eat(fakePancakeStack);
             }
         }
 
@@ -83,13 +93,12 @@ public class FSPancakeBlock extends PancakeBlock implements IForgeBlockExtension
 
         if (level.getBlockEntity(pos) instanceof FSPancakeBlockEntity pancake && placer instanceof ServerPlayer)
         {
-            final int pancakeIndex = state.getValue(PANCAKES) - 1;
-            pancake.storePancake(pancakeIndex, stack);
+            pancake.addPancake(stack);
         }
     }
 
     /**
-     * We need to set the related item to this, since otherwise {@link PancakeBlock#use} will treat an empty hand as being a pancake item
+     * We need to set the related item to this, since otherwise {@link PancakeBlock#useItemOn} will treat an empty hand as being a pancake item
      */
     @Override
     public Item asItem()

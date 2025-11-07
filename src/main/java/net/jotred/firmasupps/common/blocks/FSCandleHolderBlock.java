@@ -1,17 +1,19 @@
 package net.jotred.firmasupps.common.blocks;
 
 import java.util.function.ToIntFunction;
-import net.jotred.firmasupps.config.FSConfig;
+import net.jotred.firmasupps.config.FSServerConfig;
+import net.mehvahdjukaar.moonlight.api.block.ILightable;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.CandleHolderBlock;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpWaterBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,7 +34,7 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
 
     public FSCandleHolderBlock(DyeColor color, ExtendedProperties properties)
     {
-        super(color, properties.properties(), CandleHolderBlock::getParticleOffsets);
+        super(color, properties.properties(), CandleHolderBlock::getDefaultParticleOffsets);
         this.properties = properties;
 
     }
@@ -41,7 +43,7 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
     {
         if (level.getBlockEntity(pos) instanceof TickCounterBlockEntity candleHolder)
         {
-            final int candleHolderTicks = FSConfig.SERVER.candleHolderTicks.get();
+            final int candleHolderTicks = FSServerConfig.candleHolderTicks.get();
             if (candleHolder.getTicksSinceUpdate() > candleHolderTicks && candleHolderTicks > 0)
             {
                 level.setBlockAndUpdate(pos, state.setValue(LIT, false));
@@ -50,14 +52,14 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit)
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult)
     {
         // Preventing candle holders from immediately extinguishing if lit with a firestarter
         if (Helpers.isItem(player.getMainHandItem(), TFCItems.FIRESTARTER.get()))
         {
-            return InteractionResult.PASS;
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
-        return super.use(state, level, pos, player, hand, hit);
+        return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
     }
 
     @Override
@@ -74,13 +76,13 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
     }
 
     /**
-     * The default interaction from using a flint and steel is set by {@link LightUpWaterBlock#lightUp}
+     * The default interaction from using a flint and steel is set by {@link LightUpWaterBlock#tryLightUp}
      * Since this doesn't reset the {@link TickCounterBlockEntity}, we have to override it
      */
     @Override
-    public boolean lightUp(@Nullable Entity player, BlockState state, BlockPos pos, LevelAccessor world, FireSourceType fireSourceType)
+    public boolean tryLightUp(@Nullable Entity player, BlockState state, BlockPos pos, LevelAccessor world, ILightable.FireSoundType fireSourceType)
     {
         TickCounterBlockEntity.reset((Level) world, pos);
-        return super.lightUp(player, state, pos, world, fireSourceType);
+        return super.tryLightUp(player, state, pos, world, fireSourceType);
     }
 }
