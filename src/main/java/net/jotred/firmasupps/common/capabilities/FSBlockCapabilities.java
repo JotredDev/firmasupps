@@ -2,6 +2,7 @@ package net.jotred.firmasupps.common.capabilities;
 
 import java.util.function.Supplier;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
+import net.jotred.firmasupps.common.blockentities.FSGobletBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 
@@ -18,5 +19,6 @@ public class FSBlockCapabilities
     private static void registerInventory(RegisterCapabilitiesEvent event, Supplier<? extends BlockEntityType<? extends InventoryBlockEntity<?>>> type)
     {
         event.registerBlockEntity(BlockCapabilities.ITEM, type.get(), InventoryBlockEntity::getSidedInventory);
+        event.registerBlockEntity(BlockCapabilities.FLUID, FSBlockEntities.GOBLET.get(), FSGobletBlockEntity::getTank);
     }
 }

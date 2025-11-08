@@ -2,7 +2,6 @@ package net.jotred.firmasupps.compat.jade.common;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-import javax.annotation.Nullable;
 import net.jotred.firmasupps.common.blocks.FSCandleHolderBlock;
 import net.jotred.firmasupps.common.blocks.FSFirePitBlock;
 import net.jotred.firmasupps.common.blocks.FSSconceBlock;
@@ -12,6 +11,8 @@ import net.jotred.firmasupps.config.FSServerConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.Nullable;
+
 import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.util.calendar.Calendars;
 

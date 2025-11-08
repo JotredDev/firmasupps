@@ -52,7 +52,7 @@ public class FSBlocks
                 .sound(SoundType.LANTERN)
                 .lightLevel(FSCandleHolderBlock.LIGHTING_SCALE)
                 .randomTicks()
-                .blockEntity(TFCBlockEntities.TICK_COUNTER)),
+                .blockEntity(FSBlockEntities.TICK_COUNTER)),
         b -> new BlockItem(b, new Item.Properties()));
 
     public static final Map<DyeColor, Id<Block>> DYED_CANDLE_HOLDERS = Helpers.mapOf(DyeColor.class, color ->

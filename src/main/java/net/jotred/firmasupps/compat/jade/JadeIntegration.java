@@ -24,7 +24,8 @@ public class JadeIntegration implements IWailaPlugin
 
     private void register(IWailaClientRegistration registry, ResourceLocation name, BlockEntityTooltip blockEntityTooltip, Class<? extends Block> block)
     {
-        registry.registerBlockComponent(new IBlockComponentProvider() {
+        registry.registerBlockComponent(new IBlockComponentProvider()
+        {
             @Override
             public void appendTooltip(ITooltip tooltip, BlockAccessor access, IPluginConfig config)
             {

@@ -1,13 +1,12 @@
 package net.jotred.firmasupps.common.blocks;
 
+import com.mojang.logging.LogUtils;
 import net.jotred.firmasupps.common.blockentities.FSPancakeBlockEntity;
 import net.jotred.firmasupps.common.items.FSItems;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.PancakeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -43,26 +42,19 @@ public class FSPancakeBlock extends PancakeBlock implements IForgeBlockExtension
      * we have to call it ourselves to be able to actually modify the food and nutrition data of the player.
      */
     @Override
-    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit)
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit)
     {
         // Eating the last pancake destroys the block and therefore also the blockentity, so we need to retrieve data before using the superclass method
+        final int pancakeIndex = state.getValue(PANCAKES) - 1;
         ItemStack fakePancakeStack = null;
         if (level.getBlockEntity(pos) instanceof FSPancakeBlockEntity pancake)
         {
-            fakePancakeStack = pancake.getPancake();
+            fakePancakeStack = pancake.getPancake(pancakeIndex);
         }
 
-        if (stack.getItem().equals(FSItems.PANCAKE.asItem()))
-        {
-            if (level.getBlockEntity(pos) instanceof FSPancakeBlockEntity pancake && player instanceof ServerPlayer)
-            {
-                pancake.addPancake(stack);
-            }
-        }
+        InteractionResult result = super.useWithoutItem(state, level, pos, player, hit);
 
-        ItemInteractionResult result = super.useItemOn(stack, state, level, pos, player, hand, hit);
-
-        if (result.equals(ItemInteractionResult.CONSUME) || result.equals(ItemInteractionResult.SUCCESS))
+        if (result.equals(InteractionResult.CONSUME) || result.equals(InteractionResult.SUCCESS))
         {
             if (player instanceof ServerPlayer)
             {
@@ -93,12 +85,14 @@ public class FSPancakeBlock extends PancakeBlock implements IForgeBlockExtension
 
         if (level.getBlockEntity(pos) instanceof FSPancakeBlockEntity pancake && placer instanceof ServerPlayer)
         {
-            pancake.addPancake(stack);
+            LogUtils.getLogger().warn("setPlacedBy() addPancake()");
+            final int pancakeIndex = state.getValue(PANCAKES) - 1;
+            pancake.setPancake(pancakeIndex, stack);
         }
     }
 
     /**
-     * We need to set the related item to this, since otherwise {@link PancakeBlock#useItemOn} will treat an empty hand as being a pancake item
+     * We need to set the related item to this, since otherwise {@link PancakeBlock#useWithoutItem} will treat an empty hand as being a pancake item
      */
     @Override
     public Item asItem()
