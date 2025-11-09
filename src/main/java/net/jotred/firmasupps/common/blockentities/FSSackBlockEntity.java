@@ -1,10 +1,12 @@
 package net.jotred.firmasupps.common.blockentities;
 
+import java.util.List;
 import net.jotred.firmasupps.common.blocks.FSSackBlock;
 import net.jotred.firmasupps.common.container.FSSackContainer;
 import net.mehvahdjukaar.supplementaries.reg.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
@@ -22,11 +24,15 @@ import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.blockentities.InventoryBlockEntity;
+import net.dries007.tfc.common.blocks.devices.SealableDeviceBlock;
 import net.dries007.tfc.common.capabilities.DelegateItemHandler;
 import net.dries007.tfc.common.capabilities.InventoryItemHandler;
+import net.dries007.tfc.common.component.TFCComponents;
+import net.dries007.tfc.common.component.item.ItemListComponent;
 import net.dries007.tfc.common.component.size.ItemSizeManager;
 import net.dries007.tfc.common.component.size.Size;
 import net.dries007.tfc.common.container.ISlotCallback;
+import net.dries007.tfc.util.Helpers;
 
 import static net.jotred.firmasupps.FirmaSupplementaries.*;
 
@@ -72,8 +78,23 @@ public class FSSackBlockEntity extends InventoryBlockEntity<FSSackBlockEntity.Sa
         return this.customName;
     }
 
+    @Override
+    protected void applyImplicitComponents(DataComponentInput components)
+    {
+        final List<ItemStack> content = components.getOrDefault(TFCComponents.CONTENTS, ItemListComponent.EMPTY).contents();
+        Helpers.copyFrom(content, inventory);
+        super.applyImplicitComponents(components);
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder builder)
+    {
+        builder.set(TFCComponents.CONTENTS, ItemListComponent.of(inventory));
+        super.collectImplicitComponents(builder);
+    }
+
     /**
-     * Internal InventoryItemHandler subclass, used for handling item sizes
+     * Internal {@link DelegateItemHandler} subclass, used for handling item sizes
      */
     public static class SackInventory implements DelegateItemHandler, INBTSerializable<CompoundTag>
     {

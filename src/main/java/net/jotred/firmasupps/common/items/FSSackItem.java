@@ -1,6 +1,7 @@
 package net.jotred.firmasupps.common.items;
 
 import java.util.Optional;
+import com.mojang.logging.LogUtils;
 import net.jotred.firmasupps.common.blockentities.FSSackBlockEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
@@ -12,6 +13,8 @@ import net.minecraft.world.level.block.Block;
 import net.mehvahdjukaar.supplementaries.common.items.SackItem;
 
 import net.dries007.tfc.common.blocks.TooltipBlock;
+import net.dries007.tfc.common.component.TFCComponents;
+import net.dries007.tfc.common.component.item.ItemListComponent;
 import net.dries007.tfc.config.TFCConfig;
 
 public class FSSackItem extends SackItem
@@ -38,5 +41,13 @@ public class FSSackItem extends SackItem
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int itemSlot, boolean isSelected)
     {
+    }
+
+    @Override
+    public Optional<TooltipComponent> getTooltipImage(ItemStack stack)
+    {
+        return TFCConfig.CLIENT.displayItemContentsAsImages.get()
+            ? TooltipBlock.buildInventoryTooltip(stack.getOrDefault(TFCComponents.CONTENTS, ItemListComponent.EMPTY).contents(), 3, 3)
+            : Optional.empty();
     }
 }

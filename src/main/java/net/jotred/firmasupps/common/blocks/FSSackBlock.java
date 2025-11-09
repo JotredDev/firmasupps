@@ -1,6 +1,7 @@
 package net.jotred.firmasupps.common.blocks;
 
 import java.util.Optional;
+import com.mojang.logging.LogUtils;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.blockentities.FSSackBlockEntity;
 import net.mehvahdjukaar.moonlight.api.entity.ImprovedFallingBlockEntity;
@@ -72,14 +73,6 @@ public class FSSackBlock extends SackBlock implements IItemSize, TooltipBlock, I
     public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState)
     {
         return new FSSackBlockEntity(pPos, pState);
-    }
-
-    @Override
-    public Optional<TooltipComponent> getTooltipImage(ItemStack stack)
-    {
-        return TFCConfig.CLIENT.displayItemContentsAsImages.get()
-            ? TooltipBlock.buildInventoryTooltip(stack.getOrDefault(TFCComponents.CONTENTS, ItemListComponent.EMPTY).contents(), 3, 3)
-            : Optional.empty();
     }
 
     @Override
