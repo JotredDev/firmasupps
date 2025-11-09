@@ -21,7 +21,7 @@ public class FSBlockEntities
 {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD_ID);
 
-    public static final Id<FSTickCounterBlockEntity> TICK_COUNTER = register("fs_tick_counter", FSTickCounterBlockEntity::new, Stream.of(
+    public static final Id<FSTickCounterBlockEntity> TICK_COUNTER = register("tick_counter", FSTickCounterBlockEntity::new, Stream.of(
             Stream.of(
                 FSBlocks.CANDLE_HOLDER,
                 FSBlocks.SCONCE,
@@ -35,13 +35,13 @@ public class FSBlockEntities
         ).flatMap(e -> e)
     );
 
-    public static final Id<FSSackBlockEntity> SACK = register("fs_sack", FSSackBlockEntity::new, FSBlocks.SACK);
+    public static final Id<FSSackBlockEntity> SACK = register("sack", FSSackBlockEntity::new, FSBlocks.SACK);
 
-    public static final Id<FSPancakeBlockEntity> PANCAKE = register("fs_pancake", FSPancakeBlockEntity::new, FSBlocks.PANCAKE);
+    public static final Id<FSPancakeBlockEntity> PANCAKE = register("pancake", FSPancakeBlockEntity::new, FSBlocks.PANCAKE);
 
-    public static final Id<FSPlanterBlockEntity> PLANTER = register("fs_planter", FSPlanterBlockEntity::new, FSBlocks.PLANTER);
+    public static final Id<FSPlanterBlockEntity> PLANTER = register("planter", FSPlanterBlockEntity::new, FSBlocks.PLANTER);
 
-    public static final Id<FSGobletBlockEntity> GOBLET = register("fs_goblet", FSGobletBlockEntity::new, FSBlocks.GOBLET);
+    public static final Id<FSGobletBlockEntity> GOBLET = register("goblet", FSGobletBlockEntity::new, FSBlocks.GOBLET);
 
 
 
