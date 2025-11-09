@@ -1,8 +1,0 @@
-{
-	"parent": "supplementaries:block/candle_holders/floor_4",
-	"textures": {
-		"1": "supplementaries:block/candle_holder",
-		"particle": "supplementaries:block/candle_holder",
-		"all": "block/red_candle"
-	}
-}
