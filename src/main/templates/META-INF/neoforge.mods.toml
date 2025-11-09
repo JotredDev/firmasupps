@@ -3,9 +3,8 @@ loaderVersion="${loader_version_range}"
 license="${mod_license}"
 issueTrackerURL="https://github.com/JotredDev/firmasupps/issues"
 
-# The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
-#[[mixins]]
-#config="${mod_id}.mixins.json"
+[[mixins]]
+config="${mod_id}.mixins.json"
 
 [[mods]]
     modId="${mod_id}"
