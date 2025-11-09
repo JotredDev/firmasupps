@@ -23,9 +23,13 @@
     "tfc:brick/marble",
     "tfc:alabaster_brick",
     "tfc:mud_brick/loam",
-    "tfc:mud_brick/sandy_loam",
-    "tfc:mud_brick/silty_loam",
-    "tfc:mud_brick/silt",
-    "tfc:ceramic/fire_brick"
+    "tfc:mud_brick/aridisol",
+    "tfc:mud_brick/oxisol",
+    "tfc:mud_brick/fluvisol",
+    "tfc:mud_brick/entisol",
+    "tfc:mud_brick/andisol",
+    "tfc:mud_brick/mollisol",
+    "tfc:mud_brick/alfisol",
+    "tfc:mud_brick/podzol"
   ]
 }
