@@ -1,32 +1,17 @@
 package net.jotred.firmasupps.common.items;
 
-import java.util.List;
 import net.jotred.firmasupps.common.blocks.FSBlocks;
 import net.jotred.firmasupps.common.blocks.FSPancakeBlock;
 import net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement;
-import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvent;
+import net.mehvahdjukaar.supplementaries.common.items.PancakeItem;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.RecordItem;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 
-public class FSPancakeItem extends RecordItem
+public class FSPancakeItem extends PancakeItem
 {
-    public FSPancakeItem(int i, SoundEvent soundEvent, Properties properties, int seconds)
+    public FSPancakeItem(Properties properties)
     {
-        super(i, soundEvent, properties, seconds);
-    }
-
-    /**
-     * Empty override to prevent any hovertext from being appended, since this is still just a pancake, not a regular music disc
-     */
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced)
-    {
+        super(properties);
     }
 
     @Override
@@ -41,7 +26,7 @@ public class FSPancakeItem extends RecordItem
      */
     @Override
     public InteractionResult useOn(UseOnContext context)
-    {
+    {/*
         // Handling music disc behaviour
         // Notably, we check only with a single item instead of the whole stack, to avoid putting an entire stack into a juke box
         ItemStack handItem = context.getItemInHand();
@@ -65,5 +50,7 @@ public class FSPancakeItem extends RecordItem
             return AdditionalItemPlacement.getBlockPlacer().mimicUseOn(context, FSBlocks.PANCAKE.get(), null);
         }
         return result;
+        */
+        return AdditionalItemPlacement.getBlockPlacer().mimicUseOn(context, FSBlocks.PANCAKE.get(), null);
     }
 }

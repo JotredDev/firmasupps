@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "wrench"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:double_ingots/copper",
+    "count": 1
+  },
+  "result": {
+    "id": "supplementaries:wrench",
+    "count": 1
+  },
+  "tier": 1,
+  "rules": [
+    "upset_last",
+    "bend_second_last",
+    "draw_third_last"
+  ],
+  "apply_forging_bonus": true
+}

@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "antique_ink"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "tfc:glass_bottles"
+    },
+    {
+      "item": "tfc:powder/charcoal"
+    },
+    {
+      "item": "tfc:powder/charcoal"
+    },
+    {
+      "item": "tfc:powder/charcoal"
+    },
+    {
+      "item": "tfc:powder/charcoal"
+    },
+    {
+      "item": "tfc:powder/graphite"
+    }
+  ],
+  "result": {
+    "id": "supplementaries:antique_ink"
+  }
+}

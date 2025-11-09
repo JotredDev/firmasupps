@@ -1,5 +1,5 @@
 package net.jotred.firmasupps.client.render.curio;
-
+/*
 import com.eerussianguy.barrels_2012.Barrels2012;
 import com.eerussianguy.barrels_2012.client.BlockItemCurioRenderer;
 import com.eerussianguy.barrels_2012.client.BodyCurioModel;
@@ -31,3 +31,4 @@ public class FSSackCurioRenderer extends BlockItemCurioRenderer
         return null;
     }
 }
+*/

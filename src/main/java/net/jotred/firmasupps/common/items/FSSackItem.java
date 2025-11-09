@@ -11,52 +11,15 @@ import net.minecraft.world.level.block.Block;
 import net.mehvahdjukaar.supplementaries.common.items.SackItem;
 
 import net.dries007.tfc.common.blocks.TooltipBlock;
+import net.dries007.tfc.common.component.TFCComponents;
+import net.dries007.tfc.common.component.item.ItemListComponent;
+import net.dries007.tfc.config.TFCConfig;
 
 public class FSSackItem extends SackItem
 {
     public FSSackItem(Block block, Properties properties)
     {
         super(block, properties);
-    }
-
-    @Override
-    public Optional<TooltipComponent> getTooltipImage(ItemStack stack)
-    {
-        if (getBlock() instanceof TooltipBlock tooltip)
-        {
-            return tooltip.getTooltipImage(stack);
-        }
-        return super.getTooltipImage(stack);
-    }
-
-    @Override
-    public int getBarColor(ItemStack stack)
-    {
-        if (getBlock() instanceof TooltipBlock tooltip)
-        {
-            return tooltip.getBarColor(stack);
-        }
-        return super.getBarColor(stack);
-    }
-
-    @Override
-    public int getBarWidth(ItemStack stack)
-    {
-        if (getBlock() instanceof TooltipBlock tooltip)
-        {
-            return tooltip.getBarWidth(stack);
-        }
-        return super.getBarWidth(stack);
-    }
-
-    @Override
-    public boolean isBarVisible(ItemStack stack)
-    {
-        if (getBlock() instanceof TooltipBlock tooltip)
-        {
-            return tooltip.isBarVisible(stack);
-        }
-        return super.isBarVisible(stack);
     }
 
     @Override
@@ -76,5 +39,13 @@ public class FSSackItem extends SackItem
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int itemSlot, boolean isSelected)
     {
+    }
+
+    @Override
+    public Optional<TooltipComponent> getTooltipImage(ItemStack stack)
+    {
+        return TFCConfig.CLIENT.displayItemContentsAsImages.get()
+            ? TooltipBlock.buildInventoryTooltip(stack.getOrDefault(TFCComponents.CONTENTS, ItemListComponent.EMPTY).contents(), 3, 3)
+            : Optional.empty();
     }
 }

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "flag"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "flag",
+  "pattern": [
+    "011"
+  ],
+  "key": {
+    "0": {
+      "tag": "c:rods/wooden"
+    },
+    "1": {
+      "tag": "tfc:high_quality_cloth"
+    }
+  },
+  "result": {
+    "id": "supplementaries:flag_white"
+  }
+}

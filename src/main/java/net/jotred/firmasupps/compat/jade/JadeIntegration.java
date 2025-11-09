@@ -10,8 +10,9 @@ import snownee.jade.api.IWailaPlugin;
 import snownee.jade.api.WailaPlugin;
 import snownee.jade.api.config.IPluginConfig;
 
-import net.jotred.firmasupps.compat.jade.common.BlockEntityTooltips;
-import net.jotred.firmasupps.compat.jade.common.BlockEntityTooltip;
+import net.jotred.firmasupps.compat.jade.common.FSBlockEntityTooltips;
+
+import net.dries007.tfc.util.tooltip.BlockEntityTooltip;
 
 @WailaPlugin
 public class JadeIntegration implements IWailaPlugin
@@ -19,12 +20,13 @@ public class JadeIntegration implements IWailaPlugin
     @Override
     public void registerClient(IWailaClientRegistration registry)
     {
-        BlockEntityTooltips.register((name, tooltip, block) -> register(registry, name, tooltip, block));
+        FSBlockEntityTooltips.register((name, tooltip, entity) -> register(registry, name, tooltip, entity));
     }
 
     private void register(IWailaClientRegistration registry, ResourceLocation name, BlockEntityTooltip blockEntityTooltip, Class<? extends Block> block)
     {
-        registry.registerBlockComponent(new IBlockComponentProvider() {
+        registry.registerBlockComponent(new IBlockComponentProvider()
+        {
             @Override
             public void appendTooltip(ITooltip tooltip, BlockAccessor access, IPluginConfig config)
             {

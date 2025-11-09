@@ -2,7 +2,9 @@ package net.jotred.firmasupps.common.blocks;
 
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
-import net.jotred.firmasupps.config.FSConfig;
+import net.jotred.firmasupps.common.blockentities.FSTickCounterBlockEntity;
+import net.jotred.firmasupps.config.FSServerConfig;
+import net.mehvahdjukaar.moonlight.api.block.ILightable;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpWaterBlock;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.SconceBlock;
 import net.minecraft.core.BlockPos;
@@ -17,8 +19,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
-import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.common.blocks.EntityBlockExtension;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.IForgeBlockExtension;
@@ -37,9 +37,9 @@ public class FSSconceBlock extends SconceBlock implements IForgeBlockExtension, 
 
     public static void onRandomTick(BlockState state, ServerLevel level, BlockPos pos)
     {
-        if (level.getBlockEntity(pos) instanceof TickCounterBlockEntity sconce)
+        if (level.getBlockEntity(pos) instanceof FSTickCounterBlockEntity sconce)
         {
-            final int sconceTicks = FSConfig.SERVER.sconceTicks.get();
+            final int sconceTicks = FSServerConfig.sconceTicks.get();
             if (sconce.getTicksSinceUpdate() > sconceTicks && sconceTicks > 0)
             {
                 level.setBlockAndUpdate(pos, state.setValue(LIT, false));
@@ -48,7 +48,6 @@ public class FSSconceBlock extends SconceBlock implements IForgeBlockExtension, 
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand)
     {
         onRandomTick(state, level, pos);
@@ -63,18 +62,18 @@ public class FSSconceBlock extends SconceBlock implements IForgeBlockExtension, 
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack)
     {
-        level.getBlockEntity(pos, TFCBlockEntities.TICK_COUNTER.get()).ifPresent(TickCounterBlockEntity::resetCounter);
+        FSTickCounterBlockEntity.reset(level, pos);
         super.setPlacedBy(level, pos, state, placer, stack);
     }
 
     /**
-     * The default interaction from using a flint and steel is set by {@link LightUpWaterBlock#lightUp}
-     * Since this doesn't reset the {@link TickCounterBlockEntity}, we have to override it
+     * The default interaction from using a flint and steel is set by {@link LightUpWaterBlock#tryLightUp}
+     * Since this doesn't reset the {@link FSTickCounterBlockEntity}, we have to override it
      */
     @Override
-    public boolean lightUp(@Nullable Entity player, BlockState state, BlockPos pos, LevelAccessor world, FireSourceType fireSourceType)
+    public boolean tryLightUp(@Nullable Entity player, BlockState state, BlockPos pos, LevelAccessor level, ILightable.FireSoundType fireSourceType)
     {
-        TickCounterBlockEntity.reset((Level) world, pos);
-        return super.lightUp(player, state, pos, world, fireSourceType);
+        FSTickCounterBlockEntity.reset((Level) level, pos);
+        return super.tryLightUp(player, state, pos, level, fireSourceType);
     }
 }

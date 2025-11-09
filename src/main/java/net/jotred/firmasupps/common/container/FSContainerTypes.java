@@ -4,15 +4,18 @@ import java.util.function.Supplier;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.blockentities.FSSackBlockEntity;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.common.extensions.IForgeMenuType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.network.IContainerFactory;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import net.dries007.tfc.common.blockentities.InventoryBlockEntity;
 import net.dries007.tfc.common.container.BlockEntityContainer;
+import net.dries007.tfc.common.container.ItemStackContainer;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
+import net.dries007.tfc.util.registry.RegistryHolder;
 
 import static net.jotred.firmasupps.FirmaSupplementaries.*;
 
@@ -21,17 +24,30 @@ import static net.jotred.firmasupps.FirmaSupplementaries.*;
 public final class FSContainerTypes
 {
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(Registries.MENU, MOD_ID);
-    public static final DeferredRegister<MenuType<?>> FIRMACIV_CONTAINERS = DeferredRegister.create(Registries.MENU, MOD_ID);
+    //public static final DeferredRegister<MenuType<?>> FIRMACIV_CONTAINERS = DeferredRegister.create(Registries.MENU, MOD_ID);
 
-    public static final RegistryObject<MenuType<FSSackContainer>> SACK =
+    public static final Id<FSSackContainer> SACK =
         FSContainerTypes.<FSSackBlockEntity, FSSackContainer>registerBlock("sack", FSBlockEntities.SACK, FSSackContainer::create);
-
+/*
     public static final RegistryObject<MenuType<FSSackCompartmentContainer>> SACK_COMPARTMENT_MENU = FIRMACIV_CONTAINERS.register("sack_compartment_menu",
         () -> IForgeMenuType.create(FSSackCompartmentContainer::fromNetwork));
+*/
 
-
-    private static <T extends InventoryBlockEntity<?>, C extends BlockEntityContainer<T>> RegistryObject<MenuType<C>> registerBlock(String name, Supplier<BlockEntityType<T>> type, BlockEntityContainer.Factory<T, C> factory)
+    private static <T extends InventoryBlockEntity<?>, C extends BlockEntityContainer<T>> Id<C> registerBlock(String name, Supplier<BlockEntityType<T>> type, BlockEntityContainer.Factory<T, C> factory)
     {
-        return RegistrationHelpers.registerBlockEntityContainer(CONTAINERS, name, type, factory);
+        return new Id<>(RegistrationHelpers.registerBlockEntityContainer(CONTAINERS, name, type, factory));
     }
+
+    private static <C extends ItemStackContainer> Id<C> registerItem(String name, ItemStackContainer.Factory<C> factory)
+    {
+        return new Id<>(RegistrationHelpers.registerItemStackContainer(CONTAINERS, name, factory));
+    }
+
+    private static <C extends AbstractContainerMenu> Id<C> register(String name, IContainerFactory<C> factory)
+    {
+        return new Id<>(RegistrationHelpers.registerContainer(CONTAINERS, name, factory));
+    }
+
+    public record Id<T extends AbstractContainerMenu>(DeferredHolder<MenuType<?>, MenuType<T>> holder)
+        implements RegistryHolder<MenuType<?>, MenuType<T>> {}
 }

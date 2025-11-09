@@ -12,15 +12,16 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-import net.jotred.firmasupps.compat.jade.common.BlockEntityTooltip;
-import net.jotred.firmasupps.compat.jade.common.BlockEntityTooltips;
+import net.jotred.firmasupps.compat.jade.common.FSBlockEntityTooltips;
+
+import net.dries007.tfc.util.tooltip.BlockEntityTooltip;
 
 public class TheOneProbeIntegration implements Function<ITheOneProbe, Void>
 {
     @Override
     public Void apply(ITheOneProbe registry)
     {
-        BlockEntityTooltips.register((name, tooltip, block) -> register(registry, name, tooltip, block));
+        FSBlockEntityTooltips.register((name, tooltip, block) -> register(registry, name, tooltip, block));
         return null;
     }
 

@@ -13,20 +13,21 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
+import net.dries007.tfc.util.registry.RegistryHolder;
 
 import static net.jotred.firmasupps.FirmaSupplementaries.*;
 
@@ -34,7 +35,7 @@ public class FSBlocks
 {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MOD_ID);
 
-    public static final RegistryObject<Block> CANDLE_HOLDER = register("candle_holder",
+    public static final Id<Block> CANDLE_HOLDER = register("candle_holder",
         () -> new FSCandleHolderBlock(null,
             ExtendedProperties.of(MapColor.SAND)
                 .noCollission()
@@ -44,10 +45,10 @@ public class FSBlocks
                 .sound(SoundType.LANTERN)
                 .lightLevel(FSCandleHolderBlock.LIGHTING_SCALE)
                 .randomTicks()
-                .blockEntity(TFCBlockEntities.TICK_COUNTER)),
+                .blockEntity(FSBlockEntities.TICK_COUNTER)),
         b -> new BlockItem(b, new Item.Properties()));
 
-    public static final Map<DyeColor, RegistryObject<Block>> DYED_CANDLE_HOLDERS = Helpers.mapOfKeys(DyeColor.class, color ->
+    public static final Map<DyeColor, Id<Block>> DYED_CANDLE_HOLDERS = Helpers.mapOf(DyeColor.class, color ->
         register("candle_holder/" + color.getName(),
             () -> new FSCandleHolderBlock(color,
                 ExtendedProperties.of(MapColor.SAND)
@@ -62,7 +63,7 @@ public class FSBlocks
             b -> new BlockItem(b, new Item.Properties()))
     );
 
-    public static final RegistryObject<Block> SCONCE = registerNoItem("sconce",
+    public static final Id<Block> SCONCE = registerNoItem("sconce",
         () -> new FSSconceBlock(() -> ParticleTypes.FLAME,
             ExtendedProperties.of(MapColor.SAND)
                 .noCollission()
@@ -73,7 +74,7 @@ public class FSBlocks
                 .randomTicks()
                 .blockEntity(FSBlockEntities.TICK_COUNTER)));
 
-    public static final RegistryObject<Block> SCONCE_WALL = registerNoItem("sconce_wall",
+    public static final Id<Block> SCONCE_WALL = registerNoItem("sconce_wall",
         () -> new FSSconceWallBlock(() -> ParticleTypes.FLAME,
             ExtendedProperties.of(MapColor.SAND)
                 .noCollission()
@@ -85,7 +86,7 @@ public class FSBlocks
                 .randomTicks()
                 .blockEntity(FSBlockEntities.TICK_COUNTER)));
 
-    public static final RegistryObject<Block> SCONCE_SOUL = registerNoItem("sconce_soul",
+    public static final Id<Block> SCONCE_SOUL = registerNoItem("sconce_soul",
         () -> new FSSconceBlock(() -> ParticleTypes.SOUL_FIRE_FLAME,
             ExtendedProperties.of(MapColor.SAND)
                 .noCollission()
@@ -96,7 +97,7 @@ public class FSBlocks
                 .randomTicks()
                 .blockEntity(FSBlockEntities.TICK_COUNTER)));
 
-    public static final RegistryObject<Block> SCONCE_WALL_SOUL = registerNoItem("sconce_wall_soul",
+    public static final Id<Block> SCONCE_WALL_SOUL = registerNoItem("sconce_wall_soul",
         () -> new FSSconceWallBlock(() -> ParticleTypes.SOUL_FIRE_FLAME,
             ExtendedProperties.of(MapColor.SAND)
                 .noCollission()
@@ -108,7 +109,7 @@ public class FSBlocks
                 .randomTicks()
                 .blockEntity(FSBlockEntities.TICK_COUNTER)));
 
-    public static final RegistryObject<Block> SCONCE_LEVER = register("sconce_lever",
+    public static final Id<Block> SCONCE_LEVER = register("sconce_lever",
         () -> new FSSconceLeverBlock(() -> ParticleTypes.FLAME,
             ExtendedProperties.of(MapColor.SAND)
                 .noCollission()
@@ -120,9 +121,9 @@ public class FSBlocks
                 .blockEntity(FSBlockEntities.TICK_COUNTER)),
         b -> new GenericFireStarterBlockItem(b, new Item.Properties()));
 
-    public static final RegistryObject<Block> FIRE_PIT = register("fire_pit",
+    public static final Id<Block> FIRE_PIT = register("fire_pit",
         () -> new FSFirePitBlock(1,
-            ExtendedProperties.of(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK))
+            ExtendedProperties.of(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK))
                 .noCollission()
                 .sound(SoundType.COPPER)
                 .lightLevel(FSFirePitBlock.LIGHTING_SCALE)
@@ -130,17 +131,17 @@ public class FSBlocks
                 .blockEntity(FSBlockEntities.TICK_COUNTER)),
         b -> new GenericFireStarterBlockItem(b, new Item.Properties()));
 
-    public static final RegistryObject<Block> PANCAKE = registerNoItem("pancake",
+    public static final Id<Block> PANCAKE = registerNoItem("pancake",
         () -> new FSPancakeBlock(
-            ExtendedProperties.of(BlockBehaviour.Properties.copy(Blocks.CAKE))
+            ExtendedProperties.of(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE))
                 .mapColor(MapColor.TERRACOTTA_ORANGE)
                 .strength(0.5f)
                 .sound(SoundType.WOOL)
                 .blockEntity(FSBlockEntities.PANCAKE)));
 
-    public static final RegistryObject<Block> SACK = register("sack",
+    public static final Id<Block> SACK = register("sack",
         () -> new FSSackBlock(
-            ExtendedProperties.of(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL))
+            ExtendedProperties.of(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL))
                 .mapColor(MapColor.WOOD)
                 .pushReaction(PushReaction.DESTROY)
                 .strength(0.8f)
@@ -148,33 +149,47 @@ public class FSBlocks
                 .blockEntity(FSBlockEntities.SACK)),
         block -> new FSSackItem(block, new Item.Properties()));
 
-    public static final RegistryObject<Block> PLANTER = register("planter",
+    public static final Id<Block> PLANTER = register("planter",
         () -> new FSPlanterBlock(
-            ExtendedProperties.of(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA))
+            ExtendedProperties.of(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA))
                 .mapColor(MapColor.TERRACOTTA_RED)
                 .strength(2f, 6f)
                 .blockEntity(FSBlockEntities.PLANTER)));
 
-    public static final RegistryObject<Block> GOBLET = register("goblet",
+    public static final Id<Block> GOBLET = register("goblet",
         () -> new FSGobletBlock(
-            ExtendedProperties.of(BlockBehaviour.Properties.copy(Blocks.IRON_BARS))
+            ExtendedProperties.of(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS))
                 .pushReaction(PushReaction.DESTROY)
                 .strength(1.5f, 2f)
                 .sound(SoundType.METAL)
                 .blockEntity(FSBlockEntities.GOBLET)));
 
-    private static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> blockSupplier)
+    private static <T extends Block> Id<T> registerNoItem(String name, Supplier<T> blockSupplier)
     {
-        return register(name, blockSupplier, null);
+        return register(name, blockSupplier, (Function<T, ? extends BlockItem>) null);
     }
 
-    private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockSupplier)
+    private static <T extends Block> Id<T> register(String name, Supplier<T> blockSupplier)
     {
         return register(name, blockSupplier, block -> new BlockItem(block, new Item.Properties()));
     }
 
-    private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockSupplier, @Nullable Function<T, ? extends BlockItem> blockItemFactory)
+    private static <T extends Block> Id<T> register(String name, Supplier<T> blockSupplier, Item.Properties blockItemProperties)
     {
-        return RegistrationHelpers.registerBlock(FSBlocks.BLOCKS, FSItems.ITEMS, name, blockSupplier, blockItemFactory);
+        return register(name, blockSupplier, block -> new BlockItem(block, blockItemProperties));
+    }
+
+    private static <T extends Block> Id<T> register(String name, Supplier<T> blockSupplier, @Nullable Function<T, ? extends BlockItem> blockItemFactory)
+    {
+        return new Id<>(RegistrationHelpers.registerBlock(FSBlocks.BLOCKS, FSItems.ITEMS, name, blockSupplier, blockItemFactory));
+    }
+
+    public record Id<T extends Block>(DeferredHolder<Block, T> holder) implements RegistryHolder<Block, T>, ItemLike
+    {
+        @Override
+        public Item asItem()
+        {
+            return get().asItem();
+        }
     }
 }

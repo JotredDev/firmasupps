@@ -1,5 +1,5 @@
 package net.jotred.firmasupps.common.entities.compartment;
-
+/*
 import com.alekiponi.alekiships.common.entity.vehiclehelper.CompartmentType;
 import com.alekiponi.alekiships.common.entity.vehiclehelper.compartment.AbstractCompartmentEntity;
 import com.alekiponi.alekiships.common.entity.vehiclehelper.compartment.BlockCompartment;
@@ -386,7 +386,7 @@ public class FSSackCompartmentEntity extends AbstractCompartmentEntity implement
      * <p>
      * This can't just be done by setting the blockstate value upon using as multiple players might be accessing the same sack at the same time,
      * so this class allows counting the players that have opened this sack at the current moment
-     */
+     *
     private class ContainerCounter extends ContainerOpenersCounter
     {
         private ContainerCounter()
@@ -429,3 +429,4 @@ public class FSSackCompartmentEntity extends AbstractCompartmentEntity implement
         this.recheckOpen();
     }
 }
+*/

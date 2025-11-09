@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "awning"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "2 2"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:jute_fiber"
+    },
+    "1": {
+      "item": "tfc:burlap_cloth"
+    },
+    "2": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "result": {
+    "id": "supplementaries:awning",
+    "count": 2
+  }
+}

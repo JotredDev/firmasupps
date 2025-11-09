@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "pancake"
+    }
+  ],
+  "type": "tfc:advanced_shapeless_crafting",
+  "ingredients": [
+    {
+      "type": "tfc:fluid_content",
+      "fluid": {
+        "fluid": "minecraft:milk",
+        "amount": 500
+      }
+    },
+    {
+      "type": "tfc:and",
+      "children": [
+        {
+          "tag": "c:foods/flour"
+        },
+        {
+          "type": "tfc:not_rotten"
+        }
+      ]
+    },
+    {
+      "type": "tfc:and",
+      "children": [
+        {
+          "item": "minecraft:egg"
+        },
+        {
+          "type": "tfc:not_rotten"
+        }
+      ]
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "primary_ingredient": {
+    "type": "tfc:fluid_content",
+    "fluid": {
+      "amount": 500,
+      "fluid": "minecraft:milk"
+    }
+  },
+  "result": {
+    "id": "firmasupps:pancake",
+    "count": 3
+  }
+}

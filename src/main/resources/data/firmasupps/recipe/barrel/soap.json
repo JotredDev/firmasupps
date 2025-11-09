@@ -1,0 +1,15 @@
+{
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "item": "tfc:blubber"
+  },
+  "input_fluid": {
+    "fluid": "tfc:lye",
+    "amount": 1000
+  },
+  "output_item": {
+    "id": "supplementaries:soap",
+    "count": 5
+  },
+  "duration": 72000
+}

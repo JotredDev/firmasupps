@@ -1,13 +1,13 @@
 package net.jotred.firmasupps.common.blockentities;
 
-import net.jotred.firmasupps.config.FSConfig;
+import net.jotred.firmasupps.config.FSServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 import net.dries007.tfc.common.blockentities.FarmlandBlockEntity;
 import net.dries007.tfc.common.blocks.soil.FarmlandBlock;
-import net.dries007.tfc.util.Fertilizer;
+import net.dries007.tfc.util.data.Fertilizer;
 
 /**
  * Custom farmland type for the Supplementaries planter
@@ -17,7 +17,7 @@ import net.dries007.tfc.util.Fertilizer;
  */
 public class FSPlanterBlockEntity extends FarmlandBlockEntity
 {
-    public static final double NUTRIENT_MULTIPLIER = FSConfig.SERVER.planterNutrientMultiplier.get();
+    public static final double NUTRIENT_MULTIPLIER = FSServerConfig.planterNutrientMultiplier.get();
 
     public FSPlanterBlockEntity(BlockPos pos, BlockState state)
     {

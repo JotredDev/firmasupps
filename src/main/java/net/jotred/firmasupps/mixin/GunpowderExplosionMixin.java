@@ -18,9 +18,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import net.dries007.tfc.common.blocks.BowlBlock;
-import net.dries007.tfc.common.blocks.DeadTorchBlock;
-import net.dries007.tfc.common.blocks.DeadWallTorchBlock;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.events.StartFireEvent;
 
@@ -54,16 +51,17 @@ public abstract class GunpowderExplosionMixin
      * <p>
      * This allows triggering blocks like gunpowder bowls, without risking a crash from trying to set a non-existent blockstate property
      */
-    @Redirect(method = "explodeBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z"))
+    @Redirect(method = "explodeSingleBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z"))
     private boolean fixExplodeBlockSetBlock(Level level, BlockPos pos, BlockState state, int pFlags)
     {
         StartFireEvent.startFire(level, pos, state, Direction.UP, null, new ItemStack(Items.FLINT_AND_STEEL));
         return !state.hasProperty(BlockStateProperties.LIT) || level.setBlock(pos, state.setValue(BlockStateProperties.LIT, Boolean.TRUE), 11);
     }
 
-    @Redirect(method = "explodeBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;setValue(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;"))
+    @Redirect(method = "explodeSingleBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;setValue(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;"))
     private Object fixExplodeBlockSetValue(BlockState state, Property<Boolean> property, Comparable<Boolean> comparable)
     {
         return state;
     }
+
 }

@@ -1,9 +1,12 @@
 package net.jotred.firmasupps.common.blockentities;
 
+import java.util.List;
 import net.jotred.firmasupps.common.blocks.FSSackBlock;
 import net.jotred.firmasupps.common.container.FSSackContainer;
 import net.mehvahdjukaar.supplementaries.reg.ModSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
@@ -16,14 +19,19 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.util.INBTSerializable;
-import org.jetbrains.annotations.NotNull;
+import net.neoforged.neoforge.common.util.INBTSerializable;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.blockentities.InventoryBlockEntity;
+import net.dries007.tfc.common.capabilities.DelegateItemHandler;
 import net.dries007.tfc.common.capabilities.InventoryItemHandler;
-import net.dries007.tfc.common.capabilities.size.ItemSizeManager;
-import net.dries007.tfc.common.capabilities.size.Size;
+import net.dries007.tfc.common.component.TFCComponents;
+import net.dries007.tfc.common.component.item.ItemListComponent;
+import net.dries007.tfc.common.component.size.ItemSizeManager;
+import net.dries007.tfc.common.component.size.Size;
+import net.dries007.tfc.common.container.ISlotCallback;
+import net.dries007.tfc.util.Helpers;
 
 import static net.jotred.firmasupps.FirmaSupplementaries.*;
 
@@ -31,7 +39,6 @@ import static net.jotred.firmasupps.FirmaSupplementaries.*;
 public class FSSackBlockEntity extends InventoryBlockEntity<FSSackBlockEntity.SackInventory> implements Nameable
 {
     public static final int SLOTS = 9;
-    public static final Component NAME = Component.translatable("block_entity." + MOD_ID + ".sack");
 
     private final ContainerOpenersCounter openersCounter = new ContainerCounter();
 
@@ -42,7 +49,7 @@ public class FSSackBlockEntity extends InventoryBlockEntity<FSSackBlockEntity.Sa
 
     public FSSackBlockEntity(BlockEntityType<? extends FSSackBlockEntity> type, BlockPos pos, BlockState state)
     {
-        super(type, pos, state, SackInventory::new, NAME);
+        super(type, pos, state, SackInventory::new, MOD_ID);
     }
 
     @Nullable
@@ -55,7 +62,7 @@ public class FSSackBlockEntity extends InventoryBlockEntity<FSSackBlockEntity.Sa
     @Override
     public Component getName()
     {
-        return NAME;
+        return this.defaultName;
     }
 
     @Override
@@ -70,37 +77,57 @@ public class FSSackBlockEntity extends InventoryBlockEntity<FSSackBlockEntity.Sa
         return this.customName;
     }
 
-    /**
-     * Internal InventoryItemHandler subclass, used for handling item sizes
-     */
-    public static class SackInventory extends InventoryItemHandler implements INBTSerializable<CompoundTag>
+    @Override
+    protected void applyImplicitComponents(DataComponentInput components)
     {
-        private final FSSackBlockEntity sack;
+        final List<ItemStack> content = components.getOrDefault(TFCComponents.CONTENTS, ItemListComponent.EMPTY).contents();
+        Helpers.copyFrom(content, inventory);
+        super.applyImplicitComponents(components);
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder builder)
+    {
+        builder.set(TFCComponents.CONTENTS, ItemListComponent.of(inventory));
+        super.collectImplicitComponents(builder);
+    }
+
+    /**
+     * Internal {@link DelegateItemHandler} subclass, used for handling item sizes
+     */
+    public static class SackInventory implements DelegateItemHandler, INBTSerializable<CompoundTag>
+    {
+        private final ISlotCallback callback;
+        private final InventoryItemHandler inventory;
 
         public SackInventory(InventoryBlockEntity<?> entity)
         {
-            super(entity, SLOTS);
-            sack = (FSSackBlockEntity) entity;
+            this.callback = entity;
+            this.inventory = new InventoryItemHandler(callback, SLOTS);
         }
 
-        @NotNull
         @Override
-        public ItemStack insertItem(int slot, ItemStack stack, boolean simulate)
+        public IItemHandlerModifiable getItemHandler()
         {
-            return super.insertItem(slot, stack, simulate);
-        }
-
-        @NotNull
-        @Override
-        public ItemStack extractItem(int slot, int amount, boolean simulate)
-        {
-            return super.extractItem(slot, amount, simulate);
+            return inventory;
         }
 
         @Override
         public boolean isItemValid(int slot, ItemStack stack)
         {
-            return ItemSizeManager.get(stack).getSize(stack).isEqualOrSmallerThan(Size.LARGE) && super.isItemValid(slot, stack);
+            return ItemSizeManager.get(stack).getSize(stack).isEqualOrSmallerThan(Size.LARGE);
+        }
+
+        @Override
+        public CompoundTag serializeNBT(HolderLookup.Provider provider)
+        {
+            return inventory.serializeNBT(provider);
+        }
+
+        @Override
+        public void deserializeNBT(HolderLookup.Provider provider, CompoundTag compoundTag)
+        {
+            inventory.deserializeNBT(provider, compoundTag);
         }
     }
 

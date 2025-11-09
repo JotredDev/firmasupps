@@ -4,9 +4,8 @@ import net.jotred.firmasupps.common.blockentities.FSSackBlockEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
-import net.dries007.tfc.common.capabilities.Capabilities;
 import net.dries007.tfc.common.container.BlockEntityContainer;
-import net.dries007.tfc.common.container.CallbackSlot;
+import net.dries007.tfc.common.container.slot.CallbackSlot;
 
 public class FSSackContainer extends BlockEntityContainer<FSSackBlockEntity>
 {
@@ -33,16 +32,14 @@ public class FSSackContainer extends BlockEntityContainer<FSSackBlockEntity>
     @Override
     protected void addContainerSlots()
     {
-        blockEntity.getCapability(Capabilities.ITEM).ifPresent(handler -> {
-            addSlot(new CallbackSlot(blockEntity, handler, 0, 62, 19));
-            addSlot(new CallbackSlot(blockEntity, handler, 1, 80, 19));
-            addSlot(new CallbackSlot(blockEntity, handler, 2, 98, 19));
-            addSlot(new CallbackSlot(blockEntity, handler, 3, 62, 37));
-            addSlot(new CallbackSlot(blockEntity, handler, 4, 80, 37));
-            addSlot(new CallbackSlot(blockEntity, handler, 5, 98, 37));
-            addSlot(new CallbackSlot(blockEntity, handler, 6, 62, 55));
-            addSlot(new CallbackSlot(blockEntity, handler, 7, 80, 55));
-            addSlot(new CallbackSlot(blockEntity, handler, 8, 98, 55));
-        });
+        addSlot(new CallbackSlot(blockEntity, 0, 62, 19));
+        addSlot(new CallbackSlot(blockEntity, 1, 80, 19));
+        addSlot(new CallbackSlot(blockEntity, 2, 98, 19));
+        addSlot(new CallbackSlot(blockEntity, 3, 62, 37));
+        addSlot(new CallbackSlot(blockEntity, 4, 80, 37));
+        addSlot(new CallbackSlot(blockEntity, 5, 98, 37));
+        addSlot(new CallbackSlot(blockEntity, 6, 62, 55));
+        addSlot(new CallbackSlot(blockEntity, 7, 80, 55));
+        addSlot(new CallbackSlot(blockEntity, 8, 98, 55));
     }
 }

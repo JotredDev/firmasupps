@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "awning"
+    }
+  ],
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "item": "supplementaries:awning",
+    "count": 1
+  },
+  "input_fluid": {
+    "fluid": "tfc:lime_dye",
+    "amount": 25
+  },
+  "output_item": {
+    "id": "supplementaries:awning_lime",
+    "count": 1
+  },
+  "duration": 1000
+}

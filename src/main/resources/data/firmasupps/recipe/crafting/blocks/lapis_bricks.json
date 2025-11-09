@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "lapis_bricks"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "101",
+    "010",
+    "101"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:mortar"
+    },
+    "1": {
+      "item": "tfc:gem/lapis_lazuli"
+    }
+  },
+  "result": {
+    "id": "supplementaries:lapis_bricks",
+    "count": 4
+  }
+}

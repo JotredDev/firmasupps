@@ -1,0 +1,34 @@
+{
+  "replace": false,
+  "values":
+  [
+    "tfc:brick/granite",
+    "tfc:brick/diorite",
+    "tfc:brick/gabbro",
+    "tfc:brick/shale",
+    "tfc:brick/claystone",
+    "tfc:brick/limestone",
+    "tfc:brick/conglomerate",
+    "tfc:brick/dolomite",
+    "tfc:brick/chert",
+    "tfc:brick/rhyolite",
+    "tfc:brick/basalt",
+    "tfc:brick/andesite",
+    "tfc:brick/dacite",
+    "tfc:brick/quartzite",
+    "tfc:brick/slate",
+    "tfc:brick/phyllite",
+    "tfc:brick/schist",
+    "tfc:brick/gneiss",
+    "tfc:brick/marble",
+    "tfc:alabaster_brick",
+    "tfc:mud_brick/aridisol",
+    "tfc:mud_brick/oxisol",
+    "tfc:mud_brick/fluvisol",
+    "tfc:mud_brick/entisol",
+    "tfc:mud_brick/andisol",
+    "tfc:mud_brick/mollisol",
+    "tfc:mud_brick/alfisol",
+    "tfc:mud_brick/podzol"
+  ]
+}

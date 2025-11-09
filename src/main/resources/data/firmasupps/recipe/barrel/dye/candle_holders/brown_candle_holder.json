@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "candle_holder"
+    }
+  ],
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "item": "firmasupps:candle_holder",
+    "count": 1
+  },
+  "input_fluid": {
+    "fluid": "tfc:brown_dye",
+    "amount": 25
+  },
+  "output_item": {
+    "id": "firmasupps:candle_holder/brown",
+    "count": 1
+  },
+  "duration": 1000
+}

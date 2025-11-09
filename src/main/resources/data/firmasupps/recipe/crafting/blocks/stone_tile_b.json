@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "stone_tile"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "10"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:rock/bricks/gabbro"
+    },
+    "1": {
+      "item": "tfc:rock/bricks/dacite"
+    }
+  },
+  "result": {
+    "id": "supplementaries:stone_tile",
+    "count": 4
+  }
+}

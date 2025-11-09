@@ -1,5 +1,5 @@
 package net.jotred.firmasupps.client.screen;
-
+/*
 import net.jotred.firmasupps.common.container.FSSackCompartmentContainer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
@@ -26,3 +26,4 @@ public class FSSackCompartmentScreen extends TFCContainerScreen<FSSackCompartmen
         graphics.blit(texture, leftPos, topPos, 0, 0, 0, imageWidth, imageHeight, 176, 166);
     }
 }
+*/

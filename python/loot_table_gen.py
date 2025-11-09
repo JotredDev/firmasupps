@@ -3,7 +3,7 @@ import os
 
 # Preparing the directory paths for data and assets
 base_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'src'))
-loot_table_path = base_path + "\\main\\resources\\data\\firmasupps\\loot_tables\\blocks\\candle_holder\\"
+loot_table_path = base_path + "\\main\\resources\\data\\firmasupps\\loot_table\\blocks\\candle_holder\\"
 
 colors = [
     "white",

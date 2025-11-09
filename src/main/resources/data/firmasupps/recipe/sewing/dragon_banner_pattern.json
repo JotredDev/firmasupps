@@ -1,0 +1,19 @@
+{
+  "type": "tfc:sewing",
+  "stitches": [
+    " ### ### ",
+    "## ##  ##",
+    " ## #### ",
+    "#### ####",
+    " ### ### "
+  ],
+  "squares": [
+    " # ## # ",
+    "##  # ##",
+    "# #### #",
+    " # ## # "
+  ],
+  "result": {
+    "id": "supplementaries:dragon_banner_pattern"
+  }
+}

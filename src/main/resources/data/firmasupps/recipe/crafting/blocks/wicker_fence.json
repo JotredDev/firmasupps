@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "wicker_fence"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "101",
+    "101"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:jute_fiber"
+    },
+    "1": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "result": {
+    "id": "supplementaries:wicker_fence"
+  }
+}
