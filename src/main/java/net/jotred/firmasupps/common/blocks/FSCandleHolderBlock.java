@@ -1,7 +1,6 @@
 package net.jotred.firmasupps.common.blocks;
 
 import java.util.function.ToIntFunction;
-import com.mojang.logging.LogUtils;
 import net.jotred.firmasupps.common.blockentities.FSTickCounterBlockEntity;
 import net.jotred.firmasupps.config.FSServerConfig;
 import net.mehvahdjukaar.moonlight.api.block.ILightable;

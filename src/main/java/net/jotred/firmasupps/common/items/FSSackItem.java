@@ -1,8 +1,6 @@
 package net.jotred.firmasupps.common.items;
 
 import java.util.Optional;
-import com.mojang.logging.LogUtils;
-import net.jotred.firmasupps.common.blockentities.FSSackBlockEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;

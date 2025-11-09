@@ -1,22 +1,15 @@
 package net.jotred.firmasupps.common.blockentities;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Objects;
-import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.util.INBTSerializable;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntity;
-import net.dries007.tfc.util.Helpers;
 
 public class FSPancakeBlockEntity extends TFCBlockEntity// implements INBTSerializable<CompoundTag>
 {

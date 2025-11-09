@@ -8,7 +8,6 @@ import net.jotred.firmasupps.common.container.FSContainerTypes;
 import net.jotred.firmasupps.common.items.FSCreativeTabs;
 import net.jotred.firmasupps.common.items.FSItems;
 
-
 import net.jotred.firmasupps.compat.jade.TheOneProbeIntegration;
 import net.jotred.firmasupps.config.FSServerConfig;
 import net.neoforged.api.distmarker.Dist;

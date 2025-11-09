@@ -1,6 +1,5 @@
 package net.jotred.firmasupps.common.blocks;
 
-import com.mojang.logging.LogUtils;
 import net.jotred.firmasupps.common.blockentities.FSPancakeBlockEntity;
 import net.jotred.firmasupps.common.items.FSItems;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.PancakeBlock;
@@ -85,7 +84,6 @@ public class FSPancakeBlock extends PancakeBlock implements IForgeBlockExtension
 
         if (level.getBlockEntity(pos) instanceof FSPancakeBlockEntity pancake && placer instanceof ServerPlayer)
         {
-            LogUtils.getLogger().warn("setPlacedBy() addPancake()");
             final int pancakeIndex = state.getValue(PANCAKES) - 1;
             pancake.setPancake(pancakeIndex, stack);
         }

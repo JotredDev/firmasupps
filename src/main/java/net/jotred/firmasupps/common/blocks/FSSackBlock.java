@@ -1,7 +1,5 @@
 package net.jotred.firmasupps.common.blocks;
 
-import java.util.Optional;
-import com.mojang.logging.LogUtils;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.blockentities.FSSackBlockEntity;
 import net.mehvahdjukaar.moonlight.api.entity.ImprovedFallingBlockEntity;
@@ -16,7 +14,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -33,7 +30,6 @@ import net.dries007.tfc.common.component.item.ItemListComponent;
 import net.dries007.tfc.common.component.size.IItemSize;
 import net.dries007.tfc.common.component.size.Size;
 import net.dries007.tfc.common.component.size.Weight;
-import net.dries007.tfc.config.TFCConfig;
 import net.dries007.tfc.util.Helpers;
 
 /**

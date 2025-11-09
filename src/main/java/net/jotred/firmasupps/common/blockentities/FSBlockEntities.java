@@ -1,6 +1,5 @@
 package net.jotred.firmasupps.common.blockentities;
 
-import java.util.Collection;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 import net.jotred.firmasupps.common.blocks.FSBlocks;
@@ -11,7 +10,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 import net.dries007.tfc.util.registry.RegistryHolder;
 

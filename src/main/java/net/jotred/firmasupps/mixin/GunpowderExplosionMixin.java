@@ -1,37 +1,23 @@
 package net.jotred.firmasupps.mixin;
 
-import java.util.List;
-import com.mojang.logging.LogUtils;
 import net.jotred.firmasupps.common.FSTags;
 import net.mehvahdjukaar.supplementaries.common.misc.explosion.GunpowderExplosion;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Property;
-import org.jetbrains.annotations.Nullable;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import net.dries007.tfc.common.blocks.BowlBlock;
-import net.dries007.tfc.common.blocks.DeadTorchBlock;
-import net.dries007.tfc.common.blocks.DeadWallTorchBlock;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.events.StartFireEvent;
 
@@ -50,10 +36,8 @@ public abstract class GunpowderExplosionMixin
     @Inject(method = "canLight", at = @At("RETURN"), locals = LocalCapture.CAPTURE_FAILSOFT, cancellable = true, remap = false)
     private static void fixCanLightGetValue(BlockState state, CallbackInfoReturnable<Boolean> cir, Block b)
     {
-        LogUtils.getLogger().warn("canLight()");
         if (Helpers.isBlock(b, FSTags.Blocks.FORCE_GUNPOWDER_LIGHTING))
         {
-            LogUtils.getLogger().warn("canLight() = true");
             cir.setReturnValue(true);
         }
         else
@@ -70,7 +54,6 @@ public abstract class GunpowderExplosionMixin
     @Redirect(method = "explodeSingleBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z"))
     private boolean fixExplodeBlockSetBlock(Level level, BlockPos pos, BlockState state, int pFlags)
     {
-        LogUtils.getLogger().warn("startFire @ {}", pos);
         StartFireEvent.startFire(level, pos, state, Direction.UP, null, new ItemStack(Items.FLINT_AND_STEEL));
         return !state.hasProperty(BlockStateProperties.LIT) || level.setBlock(pos, state.setValue(BlockStateProperties.LIT, Boolean.TRUE), 11);
     }

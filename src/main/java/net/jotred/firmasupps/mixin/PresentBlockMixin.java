@@ -1,9 +1,6 @@
 package net.jotred.firmasupps.mixin;
 
-import net.jotred.firmasupps.common.component.FSComponents;
-import net.jotred.firmasupps.common.component.block.SackComponent;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.PresentBlock;
-import net.mehvahdjukaar.supplementaries.common.items.components.PresentAddress;
 import net.mehvahdjukaar.supplementaries.reg.ModComponents;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;

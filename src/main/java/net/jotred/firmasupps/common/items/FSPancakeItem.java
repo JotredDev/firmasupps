@@ -5,7 +5,6 @@ import net.jotred.firmasupps.common.blocks.FSPancakeBlock;
 import net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement;
 import net.mehvahdjukaar.supplementaries.common.items.PancakeItem;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 
 public class FSPancakeItem extends PancakeItem

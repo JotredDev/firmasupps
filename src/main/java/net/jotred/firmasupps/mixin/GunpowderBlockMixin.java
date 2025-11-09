@@ -1,26 +1,18 @@
 package net.jotred.firmasupps.mixin;
 
 import net.mehvahdjukaar.supplementaries.common.block.blocks.GunpowderBlock;
-import net.mehvahdjukaar.supplementaries.common.misc.explosion.GunpowderExplosion;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import net.dries007.tfc.common.blocks.DeadTorchBlock;
 import net.dries007.tfc.common.blocks.DeadWallTorchBlock;
-import net.dries007.tfc.util.events.StartFireEvent;
-
 /**
  * Mixin to change the behaviour of the GunpowderBlock class to avoid getting lit by {@link DeadTorchBlock} and {@link DeadWallTorchBlock}.
  * <p>
