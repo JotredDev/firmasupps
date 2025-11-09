@@ -5,3 +5,5 @@ Potential future TODO:
 - Flower box accepting TFC large flowers (only accepts regular large flowers)
 - Make Flax work as an alternative to jute (maybe in different climate band to give it a purpose)
 - firepit on 1.20.1 uses wrong config
+- test item size json on 1.20.1, pancake item size
+- light sources on 1.20.1 need refactor

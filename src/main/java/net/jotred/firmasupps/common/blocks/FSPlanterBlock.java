@@ -41,7 +41,7 @@ public class FSPlanterBlock extends PlanterBlock implements HoeOverlayBlock, IFo
     @Override
     public void addHoeOverlayInfo(Level level, BlockPos blockPos, BlockState blockState, Consumer<Component> consumer, boolean isDebug)
     {
-        level.getBlockEntity(blockPos, TFCBlockEntities.FARMLAND.get()).ifPresent(farmland -> farmland.addHoeOverlayInfo(level, blockPos, consumer, true, true));
+        level.getBlockEntity(blockPos, FSBlockEntities.PLANTER.get()).ifPresent(farmland -> farmland.addHoeOverlayInfo(level, blockPos, consumer, true, true));
     }
 
     @Override
