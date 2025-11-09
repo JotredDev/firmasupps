@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "gravel_bricks"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "101",
+    "010",
+    "101"
+  ],
+  "key": {
+    "0": {
+      "item": "tfc:mortar"
+    },
+    "1": {
+      "tag": "c:/gravels"
+    }
+  },
+  "result": {
+    "id": "supplementaries:gravel_bricks",
+    "count": 4
+  }
+}

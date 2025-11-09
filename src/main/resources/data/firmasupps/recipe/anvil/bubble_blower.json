@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "bubble_blower"
+    }
+  ],
+  "type": "tfc:anvil",
+  "input": {
+    "item": "tfc:metal/rod/wrought_iron"
+  },
+  "result": {
+    "id": "supplementaries:bubble_blower",
+    "nbt": {
+      "Damage": 250
+    }
+  },
+  "tier": 1,
+  "rules": [
+    "punch_last",
+    "hit_second_last",
+    "bend_third_last"
+  ]
+}

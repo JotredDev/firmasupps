@@ -1,0 +1,36 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "bomb"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "oreganized"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "232",
+    "020"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:gunpowder"
+    },
+    "1": {
+      "tag": "c:strings"
+    },
+    "2": {
+      "item": "tfc:metal/sheet/steel"
+    },
+    "3": {
+      "item": "oreganized:shrapnel_bomb"
+    }
+  },
+  "result": {
+    "id": "supplementaries:bomb_spiky",
+    "count": 4
+  }
+}

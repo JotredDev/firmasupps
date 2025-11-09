@@ -1,5 +1,5 @@
 {
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "supplementaries:flag",
       "flag": "candle_holder"

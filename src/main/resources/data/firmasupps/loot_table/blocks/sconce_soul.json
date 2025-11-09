@@ -10,7 +10,7 @@
           "name": "firmasupps:sconce_soul"
         }
       ],
-      "conditions": [
+      "neoforge:conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }

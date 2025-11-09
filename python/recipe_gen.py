@@ -28,16 +28,16 @@ colors = [
 
 
 disable_recipe = """{
-  "conditions": [
+  "neoforge:conditions": [
     {
-      "type": "forge:false"
+      "type": "neoforge:false"
     }
   ]
 }
 """
 
 generic_awning = """{
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "supplementaries:flag",
       "flag": "awning"
@@ -45,23 +45,23 @@ generic_awning = """{
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "ingredient": {
-      "item": "supplementaries:awning"
-    }
+    "item": "supplementaries:awning",
+    "count": 1
   },
   "input_fluid": {
     "ingredient": "tfc:%s_dye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:awning_%s"
+    "item": "supplementaries:awning_%s",
+    "count": 1
   },
   "duration": 1000
 }
 """
 
 generic_bunting = """{
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "supplementaries:flag",
       "flag": "bunting"
@@ -69,26 +69,23 @@ generic_bunting = """{
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "ingredient": {
-      "item": "supplementaries:bunting"
-    }
+    "item": "supplementaries:bunting",
+    "count": 1
   },
   "input_fluid": {
     "ingredient": "tfc:%s_dye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:bunting",
-    "nbt": {
-      "Color": "%s"
-    }
+    "item": "supplementaries:bunting_%s",
+    "count": 1
   },
   "duration": 1000
 }
 """
 
 generic_candle_holder = """{
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "supplementaries:flag",
       "flag": "candle_holder"
@@ -114,7 +111,7 @@ generic_candle_holder = """{
 """
 
 generic_candle_holder_dye = """{
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "supplementaries:flag",
       "flag": "candle_holder"
@@ -122,23 +119,23 @@ generic_candle_holder_dye = """{
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "ingredient": {
-      "item": "firmasupps:candle_holder"
-    }
+    "item": "firmasupps:candle_holder",
+    "count": 1
   },
   "input_fluid": {
     "ingredient": "tfc:%s_dye",
     "amount": 25
   },
   "output_item": {
-      "item": "firmasupps:candle_holder/%s"
+    "item": "firmasupps:candle_holder/%s",
+    "count": 1
   },
   "duration": 1000
 }
 """
 
 generic_flag = """{
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "supplementaries:flag",
       "flag": "flag"
@@ -146,16 +143,16 @@ generic_flag = """{
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "ingredient": {
-      "item": "supplementaries:flag_white"
-    }
+    "item": "supplementaries:flag_white",
+    "count": 1
   },
   "input_fluid": {
     "ingredient": "tfc:%s_dye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:flag_%s"
+    "item": "supplementaries:flag_%s",
+    "count": 1
   },
   "duration": 1000
 }
@@ -227,18 +224,18 @@ def write_specific_with_exception (path_ending : str, file_name : str, generic_s
 
 def write_all () :
 
-    write_disable_recipe ("awnings", "awning_%s_2.json")
-    write_disable_recipe ("bunting", "bunting_%s.json")
-    write_disable_recipe ("bunting", "bunting_%s_2.json")
-    write_disable_recipe ("flags", "flag_%s.json")
-    write_disable_recipe ("candle_holders", "candle_holder_%s.json")
-    write_disable_recipe ("candle_holders", "candle_holder_%s_dye.json")
+    #write_disable_recipe ("awnings", "awning_%s_2.json")
+    #write_disable_recipe ("bunting", "bunting_%s.json")
+    #write_disable_recipe ("bunting", "bunting_%s_2.json")
+    #write_disable_recipe ("flags", "flag_%s.json")
+    #write_disable_recipe ("candle_holders", "candle_holder_%s.json")
+    #write_disable_recipe ("candle_holders", "candle_holder_%s_dye.json")
 
     write_specific_with_exception ("flags", "%s_flag.json", generic_flag, 0)
     write_specific_with_exception ("awnings", "%s_awning.json", generic_awning, -1)
     write_specific_with_exception ("bunting", "%s_bunting.json", generic_bunting, 0)
     write_specific_with_exception ("candle_holders", "%s_candle_holder.json", generic_candle_holder_dye, -1)
-    write_specific_with_exception ("candle_holders", "candle_holder_%s.json", generic_candle_holder, -1, compat_crafting_path)
+    #write_specific_with_exception ("candle_holders", "candle_holder_%s.json", generic_candle_holder, -1, compat_crafting_path)
 
 
 
