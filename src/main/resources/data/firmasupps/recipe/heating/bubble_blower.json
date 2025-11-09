@@ -10,7 +10,7 @@
     "item": "supplementaries:bubble_blower"
   },
   "result_fluid": {
-    "fluid": "tfc:metal/cast_iron",
+    "id": "tfc:metal/cast_iron",
     "amount": 50
   },
   "temperature": 1535

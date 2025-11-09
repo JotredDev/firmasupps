@@ -7,16 +7,16 @@
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "ingredient": {
-      "item": "firmasupps:candle_holder"
-    }
+    "item": "firmasupps:candle_holder",
+    "count": 1
   },
   "input_fluid": {
-    "ingredient": "tfc:magenta_dye",
+    "fluid": "tfc:magenta_dye",
     "amount": 25
   },
   "output_item": {
-      "item": "firmasupps:candle_holder/magenta"
+    "id": "firmasupps:candle_holder/magenta",
+    "count": 1
   },
   "duration": 1000
 }

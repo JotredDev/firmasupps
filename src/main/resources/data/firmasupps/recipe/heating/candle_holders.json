@@ -10,7 +10,7 @@
     "tag": "firmasupps:candle_holders"
   },
   "result_fluid": {
-    "fluid": "tfc:metal/steel",
+    "id": "tfc:metal/steel",
     "amount": 50
   },
   "temperature": 1540

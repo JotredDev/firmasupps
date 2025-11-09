@@ -7,16 +7,16 @@
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "ingredient": {
-      "tag": "supplementaries:flags"
-    }
+    "tag": "supplementaries:flags",
+    "count": 1
   },
   "input_fluid": {
-    "ingredient": "tfc:lye",
+    "fluid": "tfc:lye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:flag_white"
+    "id": "supplementaries:flag_white",
+    "count": 1
   },
   "duration": 1000
 }

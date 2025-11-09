@@ -6,11 +6,13 @@
     }
   ],
   "type": "tfc:anvil",
-  "input": {
-    "item": "tfc:metal/double_ingot/copper"
+  "ingredient": {
+    "tag": "c:double_ingots/copper",
+    "count": 1
   },
   "result": {
-    "id": "supplementaries:wrench"
+    "id": "supplementaries:wrench",
+    "count": 1
   },
   "tier": 1,
   "rules": [

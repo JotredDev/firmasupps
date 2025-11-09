@@ -3,9 +3,9 @@ import os
 
 # Preparing the directory paths for data and assets
 base_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'src'))
-original_recipes_path = base_path + "\\main\\resources\\data\\supplementaries\\recipes\\"
-compat_crafting_path = base_path + "\\main\\resources\\data\\firmasupps\\recipes\\crafting\\"
-compat_barrel_path = base_path + "\\main\\resources\\data\\firmasupps\\recipes\\barrel\\dye\\"
+original_recipes_path = base_path + "\\main\\resources\\data\\supplementaries\\recipe\\"
+compat_crafting_path = base_path + "\\main\\resources\\data\\firmasupps\\recipe\\crafting\\"
+compat_barrel_path = base_path + "\\main\\resources\\data\\firmasupps\\recipe\\barrel\\dye\\"
 
 colors = [
     "white",
@@ -49,11 +49,11 @@ generic_awning = """{
     "count": 1
   },
   "input_fluid": {
-    "ingredient": "tfc:%s_dye",
+    "fluid": "tfc:%s_dye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:awning_%s",
+    "id": "supplementaries:awning_%s",
     "count": 1
   },
   "duration": 1000
@@ -73,11 +73,11 @@ generic_bunting = """{
     "count": 1
   },
   "input_fluid": {
-    "ingredient": "tfc:%s_dye",
+    "fluid": "tfc:%s_dye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:bunting_%s",
+    "id": "supplementaries:bunting_%s",
     "count": 1
   },
   "duration": 1000
@@ -105,7 +105,7 @@ generic_candle_holder = """{
     }
   },
   "result": {
-    "item": "firmasupps:candle_holder/%s"
+    "id": "firmasupps:candle_holder/%s"
   }
 }
 """
@@ -123,11 +123,11 @@ generic_candle_holder_dye = """{
     "count": 1
   },
   "input_fluid": {
-    "ingredient": "tfc:%s_dye",
+    "fluid": "tfc:%s_dye",
     "amount": 25
   },
   "output_item": {
-    "item": "firmasupps:candle_holder/%s",
+    "id": "firmasupps:candle_holder/%s",
     "count": 1
   },
   "duration": 1000
@@ -147,11 +147,11 @@ generic_flag = """{
     "count": 1
   },
   "input_fluid": {
-    "ingredient": "tfc:%s_dye",
+    "fluid": "tfc:%s_dye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:flag_%s",
+    "id": "supplementaries:flag_%s",
     "count": 1
   },
   "duration": 1000

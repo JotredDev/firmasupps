@@ -10,7 +10,7 @@
     "item": "supplementaries:key"
   },
   "result_fluid": {
-    "fluid": "tfc:metal/gold",
+    "id": "tfc:metal/gold",
     "amount": 200
   },
   "temperature": 1060

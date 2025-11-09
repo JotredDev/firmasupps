@@ -14,7 +14,7 @@
     "item": "supplementaries:globe_sepia"
   },
   "result_fluid": {
-    "fluid": "tfc:metal/gold",
+    "id": "tfc:metal/gold",
     "amount": 400
   },
   "temperature": 1060

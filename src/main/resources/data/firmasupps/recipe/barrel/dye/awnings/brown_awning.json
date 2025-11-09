@@ -7,16 +7,16 @@
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "ingredient": {
-      "item": "supplementaries:awning"
-    }
+    "item": "supplementaries:awning",
+    "count": 1
   },
   "input_fluid": {
-    "ingredient": "tfc:brown_dye",
+    "fluid": "tfc:brown_dye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:awning_brown"
+    "id": "supplementaries:awning_brown",
+    "count": 1
   },
   "duration": 1000
 }

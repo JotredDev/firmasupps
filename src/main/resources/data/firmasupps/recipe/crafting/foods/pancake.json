@@ -8,23 +8,33 @@
   "type": "tfc:advanced_shapeless_crafting",
   "ingredients": [
     {
-      "type": "tfc:fluid_item",
-      "fluid_ingredient": {
-        "ingredient": "minecraft:milk",
+      "type": "tfc:fluid_content",
+      "fluid": {
+        "fluid": "minecraft:milk",
         "amount": 500
       }
     },
     {
-      "type": "tfc:not_rotten",
-      "ingredient": {
-        "tag": "tfc:foods/flour"
-      }
+      "type": "tfc:and",
+      "children": [
+        {
+          "tag": "c:foods/flour"
+        },
+        {
+          "type": "tfc:not_rotten"
+        }
+      ]
     },
     {
-      "type": "tfc:not_rotten",
-      "ingredient": {
-        "item": "minecraft:egg"
-      }
+      "type": "tfc:and",
+      "children": [
+        {
+          "item": "minecraft:egg"
+        },
+        {
+          "type": "tfc:not_rotten"
+        }
+      ]
     },
     {
       "item": "minecraft:sugar"

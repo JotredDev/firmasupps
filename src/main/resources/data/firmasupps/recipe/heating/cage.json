@@ -10,7 +10,7 @@
     "item": "supplementaries:cage"
   },
   "result_fluid": {
-    "fluid": "tfc:metal/steel",
+    "id": "tfc:metal/steel",
     "amount": 650
   },
   "temperature": 1540

@@ -3,9 +3,6 @@
     {
       "type": "supplementaries:flag",
       "flag": "flower_box"
-    },
-    {
-      "type": "forge:false"
     }
   ],
   "type": "minecraft:crafting_shaped",

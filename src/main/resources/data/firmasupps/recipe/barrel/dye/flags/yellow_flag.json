@@ -7,16 +7,16 @@
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "ingredient": {
-      "item": "supplementaries:flag_white"
-    }
+    "item": "supplementaries:flag_white",
+    "count": 1
   },
   "input_fluid": {
-    "ingredient": "tfc:yellow_dye",
+    "fluid": "tfc:yellow_dye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:flag_yellow"
+    "id": "supplementaries:flag_yellow",
+    "count": 1
   },
   "duration": 1000
 }

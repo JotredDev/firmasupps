@@ -10,7 +10,7 @@
     "item": "supplementaries:wrench"
   },
   "result_fluid": {
-    "fluid": "tfc:metal/copper",
+    "id": "tfc:metal/copper",
     "amount": 200
   },
   "temperature": 1080,

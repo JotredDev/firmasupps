@@ -7,19 +7,16 @@
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "ingredient": {
-      "item": "supplementaries:bunting"
-    }
+    "item": "supplementaries:bunting",
+    "count": 1
   },
   "input_fluid": {
-    "ingredient": "tfc:lye",
+    "fluid": "tfc:lye",
     "amount": 25
   },
   "output_item": {
-    "item": "supplementaries:bunting",
-    "nbt": {
-      "Color": "white"
-    }
+    "id": "supplementaries:bunting_white",
+    "count": 1
   },
   "duration": 1000
 }

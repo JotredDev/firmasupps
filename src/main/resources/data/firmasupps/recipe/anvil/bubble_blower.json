@@ -6,11 +6,13 @@
     }
   ],
   "type": "tfc:anvil",
-  "input": {
-    "item": "tfc:metal/rod/wrought_iron"
+  "ingredient": {
+    "tag": "c:rods/wrought_iron",
+    "count": 1
   },
   "result": {
     "id": "supplementaries:bubble_blower",
+    "count": 1,
     "nbt": {
       "Damage": 250
     }

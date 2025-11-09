@@ -10,7 +10,7 @@
     "item": "supplementaries:faucet"
   },
   "result_fluid": {
-    "fluid": "tfc:metal/steel",
+    "id": "tfc:metal/steel",
     "amount": 200
   },
   "temperature": 1540

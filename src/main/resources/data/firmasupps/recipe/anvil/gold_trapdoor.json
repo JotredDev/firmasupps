@@ -6,11 +6,13 @@
     }
   ],
   "type": "tfc:anvil",
-  "input": {
-    "item": "tfc:metal/sheet/gold"
+  "ingredient": {
+    "tag": "c:sheets/gold",
+    "count": 1
   },
   "result": {
-    "id": "supplementaries:gold_trapdoor"
+    "id": "supplementaries:gold_trapdoor",
+    "count": 1
   },
   "tier": 1,
   "rules": [
