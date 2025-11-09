@@ -8,7 +8,7 @@
         {
           "type": "minecraft:item",
           "name": "firmasupps:candle_holder/cyan",
-          "neoforge:conditions": [
+          "conditions": [
             {
               "condition": "minecraft:block_state_property",
               "block": "firmasupps:candle_holder/cyan",
@@ -25,7 +25,7 @@
           ]
         }
       ],
-      "neoforge:conditions": [
+      "conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }
@@ -38,7 +38,7 @@
         {
           "type": "minecraft:item",
           "name": "firmasupps:candle_holder/cyan",
-          "neoforge:conditions": [
+          "conditions": [
             {
               "condition": "minecraft:block_state_property",
               "block": "firmasupps:candle_holder/cyan",
@@ -55,7 +55,7 @@
           ]
         }
       ],
-      "neoforge:conditions": [
+      "conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }
@@ -68,7 +68,7 @@
         {
           "type": "minecraft:item",
           "name": "firmasupps:candle_holder/cyan",
-          "neoforge:conditions": [
+          "conditions": [
             {
               "condition": "minecraft:block_state_property",
               "block": "firmasupps:candle_holder/cyan",
@@ -85,7 +85,7 @@
           ]
         }
       ],
-      "neoforge:conditions": [
+      "conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }
@@ -98,7 +98,7 @@
         {
           "type": "minecraft:item",
           "name": "firmasupps:candle_holder/cyan",
-          "neoforge:conditions": [
+          "conditions": [
             {
               "condition": "minecraft:block_state_property",
               "block": "firmasupps:candle_holder/cyan",
@@ -115,7 +115,7 @@
           ]
         }
       ],
-      "neoforge:conditions": [
+      "conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }

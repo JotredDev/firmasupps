@@ -10,7 +10,7 @@
           "name": "firmasupps:goblet"
         }
       ],
-      "neoforge:conditions": [
+      "conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }

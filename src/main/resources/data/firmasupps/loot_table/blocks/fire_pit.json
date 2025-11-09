@@ -10,7 +10,7 @@
           "name": "firmasupps:fire_pit"
         }
       ],
-      "neoforge:conditions": [
+      "conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }
