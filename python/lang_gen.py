@@ -73,7 +73,7 @@ outlier_values = [
     "Wall Sconce",
     "Sconce Lever",
     "Firepit",
-    "Firmasupplementaries",
+    "FirmaSupplementaries",
     "Candle Holder",
     "Sconce",
     "Soul Sconce",
