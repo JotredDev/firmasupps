@@ -40,6 +40,13 @@
       "item": "minecraft:sugar"
     }
   ],
+  "primary_ingredient": {
+    "type": "tfc:fluid_content",
+    "fluid": {
+      "amount": 500,
+      "fluid": "minecraft:milk"
+    }
+  },
   "result": {
     "id": "firmasupps:pancake",
     "count": 3
