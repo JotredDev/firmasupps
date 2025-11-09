@@ -1,6 +1,8 @@
 package net.jotred.firmasupps.common.blocks;
 
 import java.util.function.ToIntFunction;
+import com.mojang.logging.LogUtils;
+import net.jotred.firmasupps.common.blockentities.FSTickCounterBlockEntity;
 import net.jotred.firmasupps.config.FSServerConfig;
 import net.mehvahdjukaar.moonlight.api.block.ILightable;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.CandleHolderBlock;
@@ -20,7 +22,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.common.blocks.EntityBlockExtension;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.IForgeBlockExtension;
@@ -41,7 +42,7 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
 
     public static void onRandomTick(BlockState state, ServerLevel level, BlockPos pos)
     {
-        if (level.getBlockEntity(pos) instanceof TickCounterBlockEntity candleHolder)
+        if (level.getBlockEntity(pos) instanceof FSTickCounterBlockEntity candleHolder)
         {
             final int candleHolderTicks = FSServerConfig.candleHolderTicks.get();
             if (candleHolder.getTicksSinceUpdate() > candleHolderTicks && candleHolderTicks > 0)
@@ -77,12 +78,12 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
 
     /**
      * The default interaction from using a flint and steel is set by {@link LightUpWaterBlock#tryLightUp}
-     * Since this doesn't reset the {@link TickCounterBlockEntity}, we have to override it
+     * Since this doesn't reset the {@link FSTickCounterBlockEntity}, we have to override it
      */
     @Override
     public boolean tryLightUp(@Nullable Entity player, BlockState state, BlockPos pos, LevelAccessor world, ILightable.FireSoundType fireSourceType)
     {
-        TickCounterBlockEntity.reset((Level) world, pos);
+        FSTickCounterBlockEntity.reset((Level) world, pos);
         return super.tryLightUp(player, state, pos, world, fireSourceType);
     }
 }
