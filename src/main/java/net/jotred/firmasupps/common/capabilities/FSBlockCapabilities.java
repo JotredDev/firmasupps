@@ -14,11 +14,11 @@ public class FSBlockCapabilities
     public static void register(RegisterCapabilitiesEvent event)
     {
         registerInventory(event, FSBlockEntities.SACK);
+        event.registerBlockEntity(BlockCapabilities.FLUID, FSBlockEntities.GOBLET.get(), FSGobletBlockEntity::getTank);
     }
 
     private static void registerInventory(RegisterCapabilitiesEvent event, Supplier<? extends BlockEntityType<? extends InventoryBlockEntity<?>>> type)
     {
         event.registerBlockEntity(BlockCapabilities.ITEM, type.get(), InventoryBlockEntity::getSidedInventory);
-        event.registerBlockEntity(BlockCapabilities.FLUID, FSBlockEntities.GOBLET.get(), FSGobletBlockEntity::getTank);
     }
 }
