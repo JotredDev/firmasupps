@@ -10,6 +10,7 @@ import net.jotred.firmasupps.common.items.GenericFireStarterBlockItem;
 import net.mehvahdjukaar.supplementaries.reg.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -140,7 +141,7 @@ public class FSBlocks
                 .blockEntity(FSBlockEntities.PANCAKE)));
 
     public static final Id<Block> SACK = register("sack",
-        () -> new FSSackBlock(
+        () -> new FSSackBlock(new ColorRGBA(0xba8f6a),
             ExtendedProperties.of(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL))
                 .mapColor(MapColor.WOOD)
                 .pushReaction(PushReaction.DESTROY)
