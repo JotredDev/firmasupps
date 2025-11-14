@@ -9,6 +9,7 @@ import net.mehvahdjukaar.supplementaries.reg.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
@@ -41,9 +42,9 @@ public class FSSackBlock extends SackBlock implements IItemSize, TooltipBlock, I
 {
     private final ExtendedProperties properties;
 
-    public FSSackBlock(ExtendedProperties properties)
+    public FSSackBlock(ColorRGBA color, ExtendedProperties properties)
     {
-        super(null, properties.properties());
+        super(color, properties.properties());
         this.properties = properties;
     }
 

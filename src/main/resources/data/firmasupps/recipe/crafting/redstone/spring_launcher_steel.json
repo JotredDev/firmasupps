@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "supplementaries:flag",
+      "flag": "spring_launcher"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "010",
+    "232",
+    "242"
+  ],
+  "key": {
+    "0": {
+      "tag": "c:sheets/steel"
+    },
+    "1": {
+      "item": "minecraft:slime_block"
+    },
+    "2": {
+      "item": "tfc:brass_mechanisms"
+    },
+    "3": {
+      "item": "minecraft:sticky_piston"
+    },
+    "4": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "result": {
+    "id": "supplementaries:spring_launcher",
+    "count": 2
+  }
+}
