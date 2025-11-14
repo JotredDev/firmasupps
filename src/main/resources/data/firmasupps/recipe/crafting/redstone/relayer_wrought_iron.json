@@ -13,7 +13,7 @@
   ],
   "key": {
     "0": {
-      "item": "minecraft:cobblestone"
+      "tag": "c:cobblestones"
     },
     "1": {
       "item": "tfc:brass_mechanisms"
@@ -22,7 +22,7 @@
       "item": "minecraft:redstone"
     },
     "3": {
-      "item": "tfc:metal/sheet/wrought_iron"
+      "tag": "c:sheets/wrought_iron"
     }
   },
   "result": {

@@ -13,7 +13,7 @@
   ],
   "key": {
     "0": {
-      "item": "tfc:metal/sheet/wrought_iron"
+      "tag": "c:sheets/wrought_iron"
     },
     "1": {
       "item": "minecraft:slime_block"
@@ -29,6 +29,7 @@
     }
   },
   "result": {
-    "id": "supplementaries:spring_launcher"
+    "id": "supplementaries:spring_launcher",
+    "count": 1
   }
 }
