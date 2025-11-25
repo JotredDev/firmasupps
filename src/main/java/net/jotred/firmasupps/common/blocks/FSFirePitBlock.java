@@ -31,7 +31,7 @@ public class FSFirePitBlock extends FirePitBlock implements IForgeBlockExtension
 
     public <T extends ParticleType<?>> FSFirePitBlock(float fireDamage, ExtendedProperties properties)
     {
-        super(1, properties.properties());
+        super(fireDamage, properties.properties());
         this.properties = properties;
     }
 
