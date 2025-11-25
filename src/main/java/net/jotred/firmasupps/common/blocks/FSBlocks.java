@@ -121,7 +121,7 @@ public class FSBlocks
         b -> new GenericFireStarterBlockItem(b, new Item.Properties()));
 
     public static final RegistryObject<Block> FIRE_PIT = register("fire_pit",
-        () -> new FSFirePitBlock(1,
+        () -> new FSFirePitBlock(1F,
             ExtendedProperties.of(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK))
                 .noCollission()
                 .sound(SoundType.COPPER)

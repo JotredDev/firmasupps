@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 
@@ -20,7 +19,7 @@ public class FSBlockEntities
 {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD_ID);
 
-    public static final RegistryObject<BlockEntityType<TickCounterBlockEntity>> TICK_COUNTER = register("tick_counter", TickCounterBlockEntity::new, Stream.of(
+    public static final RegistryObject<BlockEntityType<FSTickCounterBlockEntity>> TICK_COUNTER = register("tick_counter", FSTickCounterBlockEntity::new, Stream.of(
             FSBlocks.CANDLE_HOLDER,
             FSBlocks.DYED_CANDLE_HOLDERS.values(),
             FSBlocks.SCONCE,

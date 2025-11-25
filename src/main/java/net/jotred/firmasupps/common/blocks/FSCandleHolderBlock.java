@@ -1,6 +1,7 @@
 package net.jotred.firmasupps.common.blocks;
 
 import java.util.function.ToIntFunction;
+import net.jotred.firmasupps.common.blockentities.FSTickCounterBlockEntity;
 import net.jotred.firmasupps.config.FSConfig;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.CandleHolderBlock;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpWaterBlock;
@@ -18,7 +19,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.common.blocks.EntityBlockExtension;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.IForgeBlockExtension;
@@ -30,7 +30,7 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
     private final ExtendedProperties properties;
     public static final ToIntFunction<BlockState> LIGHTING_SCALE = (state) -> state.getValue(LIT) ? 7 + 2 * state.getValue(CANDLES) : 0;
 
-    public FSCandleHolderBlock(DyeColor color, ExtendedProperties properties)
+    public FSCandleHolderBlock(@Nullable DyeColor color, ExtendedProperties properties)
     {
         super(color, properties.properties(), CandleHolderBlock::getParticleOffsets);
         this.properties = properties;
@@ -39,7 +39,7 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
 
     public static void onRandomTick(BlockState state, ServerLevel level, BlockPos pos)
     {
-        if (level.getBlockEntity(pos) instanceof TickCounterBlockEntity candleHolder)
+        if (level.getBlockEntity(pos) instanceof FSTickCounterBlockEntity candleHolder)
         {
             final int candleHolderTicks = FSConfig.SERVER.candleHolderTicks.get();
             if (candleHolder.getTicksSinceUpdate() > candleHolderTicks && candleHolderTicks > 0)
@@ -75,12 +75,12 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
 
     /**
      * The default interaction from using a flint and steel is set by {@link LightUpWaterBlock#lightUp}
-     * Since this doesn't reset the {@link TickCounterBlockEntity}, we have to override it
+     * Since this doesn't reset the {@link FSTickCounterBlockEntity}, we have to override it
      */
     @Override
     public boolean lightUp(@Nullable Entity player, BlockState state, BlockPos pos, LevelAccessor world, FireSourceType fireSourceType)
     {
-        TickCounterBlockEntity.reset((Level) world, pos);
+        FSTickCounterBlockEntity.reset((Level) world, pos);
         return super.lightUp(player, state, pos, world, fireSourceType);
     }
 }

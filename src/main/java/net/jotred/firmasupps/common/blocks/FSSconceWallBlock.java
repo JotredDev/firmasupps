@@ -1,6 +1,7 @@
 package net.jotred.firmasupps.common.blocks;
 
 import java.util.function.Supplier;
+import net.jotred.firmasupps.common.blockentities.FSTickCounterBlockEntity;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpWaterBlock;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.SconceWallBlock;
 import net.minecraft.core.BlockPos;
@@ -15,7 +16,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.common.blocks.EntityBlockExtension;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.IForgeBlockExtension;
@@ -51,12 +51,12 @@ public class FSSconceWallBlock extends SconceWallBlock implements IForgeBlockExt
 
     /**
      * The default interaction from using a flint and steel is set by {@link LightUpWaterBlock#lightUp}
-     * Since this doesn't reset the {@link TickCounterBlockEntity}, we have to override it
+     * Since this doesn't reset the {@link FSTickCounterBlockEntity}, we have to override it
      */
     @Override
     public boolean lightUp(@Nullable Entity player, BlockState state, BlockPos pos, LevelAccessor world, FireSourceType fireSourceType)
     {
-        TickCounterBlockEntity.reset((Level) world, pos);
+        FSTickCounterBlockEntity.reset((Level) world, pos);
         return super.lightUp(player, state, pos, world, fireSourceType);
     }
 }

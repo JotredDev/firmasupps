@@ -1,5 +1,6 @@
 package net.jotred.firmasupps;
 
+import net.jotred.firmasupps.common.blockentities.FSTickCounterBlockEntity;
 import net.jotred.firmasupps.common.blocks.FSCandleHolderBlock;
 import net.jotred.firmasupps.common.blocks.FSFirePitBlock;
 import net.jotred.firmasupps.common.blocks.FSGobletBlock;
@@ -17,7 +18,6 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 
-import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.events.DouseFireEvent;
 import net.dries007.tfc.util.events.StartFireEvent;
@@ -45,31 +45,31 @@ public class ForgeEventHandler
         if (block instanceof FSCandleHolderBlock && !state.getValue(WATERLOGGED))
         {
             level.setBlock(pos, state.setValue(FSCandleHolderBlock.LIT, true), Block.UPDATE_ALL_IMMEDIATE);
-            TickCounterBlockEntity.reset(level, pos);
+            FSTickCounterBlockEntity.reset(level, pos);
             event.setCanceled(true);
         }
         else if (block instanceof FSSconceBlock && !state.getValue(WATERLOGGED))
         {
             level.setBlock(pos, state.setValue(FSSconceBlock.LIT, true), Block.UPDATE_ALL_IMMEDIATE);
-            TickCounterBlockEntity.reset(level, pos);
+            FSTickCounterBlockEntity.reset(level, pos);
             event.setCanceled(true);
         }
         else if (block instanceof FSSconceWallBlock && !state.getValue(WATERLOGGED))
         {
             level.setBlock(pos, state.setValue(FSSconceWallBlock.LIT, true), Block.UPDATE_ALL_IMMEDIATE);
-            TickCounterBlockEntity.reset(level, pos);
+            FSTickCounterBlockEntity.reset(level, pos);
             event.setCanceled(true);
         }
         else if (block instanceof FSSconceLeverBlock && !state.getValue(WATERLOGGED))
         {
             level.setBlock(pos, state.setValue(FSSconceWallBlock.LIT, true), Block.UPDATE_ALL_IMMEDIATE);
-            TickCounterBlockEntity.reset(level, pos);
+            FSTickCounterBlockEntity.reset(level, pos);
             event.setCanceled(true);
         }
         else if (block instanceof FSFirePitBlock && !state.getValue(WATERLOGGED))
         {
             level.setBlock(pos, state.setValue(FSFirePitBlock.LIT, true), Block.UPDATE_ALL_IMMEDIATE);
-            TickCounterBlockEntity.reset(level, pos);
+            FSTickCounterBlockEntity.reset(level, pos);
             event.setCanceled(true);
         }
     }
