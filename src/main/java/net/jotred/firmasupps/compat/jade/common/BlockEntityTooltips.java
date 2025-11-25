@@ -3,6 +3,7 @@ package net.jotred.firmasupps.compat.jade.common;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
+import net.jotred.firmasupps.common.blockentities.FSTickCounterBlockEntity;
 import net.jotred.firmasupps.common.blocks.FSCandleHolderBlock;
 import net.jotred.firmasupps.common.blocks.FSFirePitBlock;
 import net.jotred.firmasupps.common.blocks.FSSconceBlock;
@@ -12,7 +13,6 @@ import net.jotred.firmasupps.config.FSConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.util.calendar.Calendars;
 
 public class BlockEntityTooltips
@@ -51,7 +51,7 @@ public class BlockEntityTooltips
     public static BlockEntityTooltip tickCounter(Supplier<Integer> totalTicks)
     {
         return (level, state, pos, entity, tooltip) -> {
-            if (entity instanceof TickCounterBlockEntity counter)
+            if (entity instanceof FSTickCounterBlockEntity counter)
             {
                 timeLeft(level, tooltip, totalTicks.get() - counter.getTicksSinceUpdate());
             }

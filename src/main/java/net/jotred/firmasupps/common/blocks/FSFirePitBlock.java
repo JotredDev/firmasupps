@@ -1,6 +1,7 @@
 package net.jotred.firmasupps.common.blocks;
 
 import java.util.function.ToIntFunction;
+import net.jotred.firmasupps.common.blockentities.FSTickCounterBlockEntity;
 import net.jotred.firmasupps.config.FSConfig;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.FirePitBlock;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpWaterBlock;
@@ -19,8 +20,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
-import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
 import net.dries007.tfc.common.blocks.EntityBlockExtension;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.IForgeBlockExtension;
@@ -38,10 +37,10 @@ public class FSFirePitBlock extends FirePitBlock implements IForgeBlockExtension
 
     public static void onRandomTick(BlockState state, ServerLevel level, BlockPos pos)
     {
-        if (level.getBlockEntity(pos) instanceof TickCounterBlockEntity sconce)
+        if (level.getBlockEntity(pos) instanceof FSTickCounterBlockEntity firePit)
         {
-            final int sconceTicks = FSConfig.SERVER.sconceTicks.get();
-            if (sconce.getTicksSinceUpdate() > sconceTicks && sconceTicks > 0)
+            final int firePitTicks = FSConfig.SERVER.firePitTicks.get();
+            if (firePit.getTicksSinceUpdate() > firePitTicks && firePitTicks > 0)
             {
                 level.setBlockAndUpdate(pos, state.setValue(LIT, false));
             }
@@ -64,7 +63,7 @@ public class FSFirePitBlock extends FirePitBlock implements IForgeBlockExtension
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack)
     {
-        level.getBlockEntity(pos, TFCBlockEntities.TICK_COUNTER.get()).ifPresent(TickCounterBlockEntity::resetCounter);
+        FSTickCounterBlockEntity.reset(level, pos);
         super.setPlacedBy(level, pos, state, placer, stack);
     }
 
@@ -82,12 +81,12 @@ public class FSFirePitBlock extends FirePitBlock implements IForgeBlockExtension
 
     /**
      * The default interaction from using a flint and steel is set by {@link LightUpWaterBlock#lightUp}
-     * Since this doesn't reset the {@link TickCounterBlockEntity}, we have to override it
+     * Since this doesn't reset the {@link FSTickCounterBlockEntity}, we have to override it
      */
     @Override
     public boolean lightUp(@Nullable Entity player, BlockState state, BlockPos pos, LevelAccessor world, FireSourceType fireSourceType)
     {
-        TickCounterBlockEntity.reset((Level) world, pos);
+        FSTickCounterBlockEntity.reset((Level) world, pos);
         return super.lightUp(player, state, pos, world, fireSourceType);
     }
 }
