@@ -69,7 +69,7 @@ generic_bunting = """{
   ],
   "type": "tfc:barrel_sealed",
   "input_item": {
-    "item": "supplementaries:bunting",
+    "item": "supplementaries:bunting_white",
     "count": 1
   },
   "input_fluid": {
@@ -231,10 +231,10 @@ def write_all () :
     #write_disable_recipe ("candle_holders", "candle_holder_%s.json")
     #write_disable_recipe ("candle_holders", "candle_holder_%s_dye.json")
 
-    write_specific_with_exception ("flags", "%s_flag.json", generic_flag, 0)
-    write_specific_with_exception ("awnings", "%s_awning.json", generic_awning, -1)
+    #write_specific_with_exception ("flags", "%s_flag.json", generic_flag, 0)
+    #write_specific_with_exception ("awnings", "%s_awning.json", generic_awning, -1)
     write_specific_with_exception ("bunting", "%s_bunting.json", generic_bunting, 0)
-    write_specific_with_exception ("candle_holders", "%s_candle_holder.json", generic_candle_holder_dye, -1)
+    #write_specific_with_exception ("candle_holders", "%s_candle_holder.json", generic_candle_holder_dye, -1)
     #write_specific_with_exception ("candle_holders", "candle_holder_%s.json", generic_candle_holder, -1, compat_crafting_path)
 
 

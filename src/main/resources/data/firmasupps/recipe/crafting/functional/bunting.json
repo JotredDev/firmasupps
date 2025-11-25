@@ -20,10 +20,7 @@
     }
   },
   "result": {
-    "id": "supplementaries:bunting",
-    "nbt": {
-      "Color": "white"
-    },
+    "id": "supplementaries:bunting_white",
     "count": 6
   }
 }
