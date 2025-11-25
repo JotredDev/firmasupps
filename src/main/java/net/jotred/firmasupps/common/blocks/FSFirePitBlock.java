@@ -6,7 +6,6 @@ import net.jotred.firmasupps.config.FSConfig;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.FirePitBlock;
 import net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpWaterBlock;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleType;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -29,7 +28,7 @@ public class FSFirePitBlock extends FirePitBlock implements IForgeBlockExtension
     private final ExtendedProperties properties;
     public static final ToIntFunction<BlockState> LIGHTING_SCALE = (state) -> state.getValue(LIT) ? 15 : 0;
 
-    public <T extends ParticleType<?>> FSFirePitBlock(float fireDamage, ExtendedProperties properties)
+    public FSFirePitBlock(float fireDamage, ExtendedProperties properties)
     {
         super(fireDamage, properties.properties());
         this.properties = properties;

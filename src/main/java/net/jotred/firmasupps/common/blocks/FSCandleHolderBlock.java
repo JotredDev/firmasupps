@@ -30,7 +30,7 @@ public class FSCandleHolderBlock extends CandleHolderBlock implements IForgeBloc
     private final ExtendedProperties properties;
     public static final ToIntFunction<BlockState> LIGHTING_SCALE = (state) -> state.getValue(LIT) ? 7 + 2 * state.getValue(CANDLES) : 0;
 
-    public FSCandleHolderBlock(DyeColor color, ExtendedProperties properties)
+    public FSCandleHolderBlock(@Nullable DyeColor color, ExtendedProperties properties)
     {
         super(color, properties.properties(), CandleHolderBlock::getParticleOffsets);
         this.properties = properties;
