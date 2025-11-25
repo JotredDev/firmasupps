@@ -7,3 +7,4 @@ Potential future TODO:
 - firepit on 1.20.1 uses wrong config
 - test item size json on 1.20.1, pancake item size
 - light sources on 1.20.1 need refactor
+- relayer on 1.20.1 uses vanilla cobblestone

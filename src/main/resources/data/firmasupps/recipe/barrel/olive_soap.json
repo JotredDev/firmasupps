@@ -1,0 +1,16 @@
+{
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "item": "tfc:powder/salt",
+    "count": 2
+  },
+  "input_fluid": {
+    "fluid": "tfc:olive_oil",
+    "amount": 1000
+  },
+  "output_item": {
+    "id": "supplementaries:soap",
+    "count": 8
+  },
+  "duration": 72000
+}
