@@ -1,6 +1,7 @@
 package net.jotred.firmasupps;
 
 import net.jotred.firmasupps.client.ClientEventHandler;
+import net.jotred.firmasupps.client.RenderEventHandler;
 import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.blocks.FSBlocks;
 import net.jotred.firmasupps.common.capabilities.FSBlockCapabilities;
@@ -42,7 +43,7 @@ public class FirmaSupplementaries
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             ClientEventHandler.init(bus, mod);
-            //RenderEventHandler.init();
+            RenderEventHandler.init(bus, mod);
         }
 
         /*
