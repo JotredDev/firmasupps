@@ -23,7 +23,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
@@ -44,7 +43,7 @@ public class FSBlocks
                 .sound(SoundType.LANTERN)
                 .lightLevel(FSCandleHolderBlock.LIGHTING_SCALE)
                 .randomTicks()
-                .blockEntity(TFCBlockEntities.TICK_COUNTER)),
+                .blockEntity(FSBlockEntities.TICK_COUNTER)),
         b -> new BlockItem(b, new Item.Properties()));
 
     public static final Map<DyeColor, RegistryObject<Block>> DYED_CANDLE_HOLDERS = Helpers.mapOfKeys(DyeColor.class, color ->
