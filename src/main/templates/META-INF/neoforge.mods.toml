@@ -46,13 +46,13 @@ config="${mod_id}.mixins.json"
 [[dependencies.${mod_id}]]
     modId="supplementaries"
     mandatory = true
-    versionRange = "[1.21-3.4.20,)"
+    versionRange = "[1.21-3.5.1,)"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.${mod_id}]]
     modId="moonlight"
     mandatory = true
-    versionRange = "[1.21-2.25.5,)"
+    versionRange = "[1.21-2.27.1,)"
     ordering = "AFTER"
     side = "BOTH"
