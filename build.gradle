@@ -146,8 +146,8 @@ dependencies {
     implementation "curse.maven:patchouli-306770:6842247"
     implementation "curse.maven:terrafirmacraft-302973:7150812"
 
-    implementation "curse.maven:selene-499980:7162694"
-    implementation "curse.maven:supplementaries-412082:7141234"
+    implementation "curse.maven:selene-499980:7297858"
+    implementation "curse.maven:supplementaries-412082:7302844"
 
     implementation "curse.maven:curios-309927:6529130"
     implementation "curse.maven:barrels-2012-662156:7255234"
