@@ -3,10 +3,6 @@
     {
       "type": "supplementaries:flag",
       "flag": "sconce"
-    },
-    {
-      "type": "supplementaries:flag",
-      "flag": "sconce_soul"
     }
   ],
   "type": "minecraft:crafting_shapeless",
@@ -15,10 +11,10 @@
       "item": "firmasupps:sconce"
     },
     {
-      "tag": "firmasupps:blue_flame_powder"
+      "tag": "firmasupps:green_flame_powder"
     }
   ],
   "result": {
-    "id": "firmasupps:sconce_soul"
+    "id": "firmasupps:sconce_green"
   }
 }

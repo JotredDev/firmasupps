@@ -50,6 +50,8 @@ public class ClientEventHandler
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.SCONCE_WALL.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.SCONCE_SOUL.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.SCONCE_WALL_SOUL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(FSBlocks.SCONCE_GREEN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(FSBlocks.SCONCE_WALL_GREEN.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.SCONCE_LEVER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.FIRE_PIT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FSBlocks.PANCAKE.get(), RenderType.cutout());

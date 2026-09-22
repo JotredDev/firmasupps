@@ -26,6 +26,8 @@ public class FSBlockEntities
                 FSBlocks.SCONCE_WALL,
                 FSBlocks.SCONCE_SOUL,
                 FSBlocks.SCONCE_WALL_SOUL,
+                FSBlocks.SCONCE_GREEN,
+                FSBlocks.SCONCE_WALL_GREEN,
                 FSBlocks.SCONCE_LEVER,
                 FSBlocks.FIRE_PIT
             ),

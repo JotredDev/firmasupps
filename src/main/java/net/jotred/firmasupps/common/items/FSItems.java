@@ -33,6 +33,12 @@ public class FSItems
             FSBlocks.SCONCE_WALL_SOUL.get(),
             new Item.Properties()));
 
+    public static final ItemId SCONCE_GREEN = register("sconce_green",
+        () -> new FSSconceItem(
+            FSBlocks.SCONCE_GREEN.get(),
+            FSBlocks.SCONCE_WALL_GREEN.get(),
+            new Item.Properties()));
+
     public static final ItemId PANCAKE = register("pancake",
         () -> new FSPancakeItem(new Item.Properties()
             .component(DataComponents.JUKEBOX_PLAYABLE, new JukeboxPlayable(new EitherHolder<>(ModSounds.PANCAKE_MUSIC_JUKEBOX.getKey()), false))

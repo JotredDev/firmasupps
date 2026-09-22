@@ -7,6 +7,7 @@ import net.jotred.firmasupps.common.blockentities.FSBlockEntities;
 import net.jotred.firmasupps.common.items.FSItems;
 import net.jotred.firmasupps.common.items.FSSackItem;
 import net.jotred.firmasupps.common.items.GenericFireStarterBlockItem;
+import net.mehvahdjukaar.supplementaries.reg.ModParticles;
 import net.mehvahdjukaar.supplementaries.reg.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -107,6 +108,29 @@ public class FSBlocks
                 .sound(SoundType.LANTERN)
                 .dropsLike(SCONCE_SOUL)
                 .lightLevel(FSSconceBlock.SOUL_LIGHTING_SCALE)
+                .randomTicks()
+                .blockEntity(FSBlockEntities.TICK_COUNTER)));
+
+    public static final Id<Block> SCONCE_GREEN = registerNoItem("sconce_green",
+        () -> new FSSconceBlock(() -> ParticleTypes.FLAME,
+            ExtendedProperties.of(MapColor.SAND)
+                .noCollission()
+                .pushReaction(PushReaction.DESTROY)
+                .instabreak()
+                .sound(SoundType.LANTERN)
+                .lightLevel(FSSconceBlock.REGULAR_LIGHTING_SCALE)
+                .randomTicks()
+                .blockEntity(FSBlockEntities.TICK_COUNTER)));
+
+    public static final Id<Block> SCONCE_WALL_GREEN = registerNoItem("sconce_wall_green",
+        () -> new FSSconceWallBlock(ModParticles.GREEN_FLAME,
+            ExtendedProperties.of(MapColor.SAND)
+                .noCollission()
+                .pushReaction(PushReaction.DESTROY)
+                .instabreak()
+                .sound(SoundType.LANTERN)
+                .dropsLike(SCONCE_GREEN)
+                .lightLevel(FSSconceBlock.REGULAR_LIGHTING_SCALE)
                 .randomTicks()
                 .blockEntity(FSBlockEntities.TICK_COUNTER)));
 
