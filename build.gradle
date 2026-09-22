@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'net.neoforged.moddev' version '2.0.116'
+    id 'net.neoforged.moddev' version '2.0.147'
     id 'idea'
 }
 
@@ -136,21 +136,22 @@ configurations {
 
 dependencies {
 
-    localRuntime "mezz.jei:jei-1.21.1-neoforge:19.25.0.322"
-    localRuntime "vazkii.patchouli:Patchouli:1.21.1-92-NEOFORGE"
+    localRuntime "mezz.jei:jei-1.21.1-neoforge:19.57.0.447"
+    localRuntime "vazkii.patchouli:Patchouli:1.21.1-93-NEOFORGE"
 
     implementation "curse.maven:the-one-probe-245211:7037783"
-    implementation "curse.maven:jade-324717:6853386"
+    implementation "curse.maven:jade-324717:8591319"
     runtimeOnly "curse.maven:mouse-tweaks-60089:5637846"
 
     implementation "curse.maven:patchouli-306770:6842247"
-    implementation "curse.maven:terrafirmacraft-302973:7150812"
+    implementation "curse.maven:terrafirmacraft-302973:8831715"
 
-    implementation "curse.maven:selene-499980:7297858"
-    implementation "curse.maven:supplementaries-412082:7302844"
+    implementation "curse.maven:selene-499980:8941470"
+    implementation "curse.maven:supplementaries-412082:8852720"
 
     implementation "curse.maven:curios-309927:6529130"
     implementation "curse.maven:barrels-2012-662156:7255234"
+    //runtimeOnly "curse.maven:arborfirmacraft-877545:8722148"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
